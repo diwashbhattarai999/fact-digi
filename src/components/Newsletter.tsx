@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
 export const Newsletter = () => {
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Subscribed!");
   };
@@ -18,8 +18,9 @@ export const Newsletter = () => {
             Newsletter
           </span>
         </h3>
-        <p className="text-xl text-muted-foreground text-center mt-4 mb-8">
-          Lorem ipsum dolor sit amet consectetur.
+        <p className="text-lg text-muted-foreground text-center mt-4 mb-8">
+          Stay updated with the latest news, tips, and exclusive offers.
+          Subscribe to receive daily updates directly to your inbox.
         </p>
 
         <form
@@ -27,7 +28,7 @@ export const Newsletter = () => {
           onSubmit={handleSubmit}
         >
           <Input
-            placeholder="leomirandadev@gmail.com"
+            placeholder="youremail@example.com"
             className="bg-muted/50 dark:bg-muted/80 "
             aria-label="email"
           />

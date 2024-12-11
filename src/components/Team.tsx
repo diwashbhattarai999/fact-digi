@@ -13,10 +13,10 @@ interface TeamProps {
   imageUrl: string;
   name: string;
   position: string;
-  socialNetworks: SociaNetworkslProps[];
+  socialNetworks: SocialNetworksProps[];
 }
 
-interface SociaNetworkslProps {
+interface SocialNetworksProps {
   name: string;
   url: string;
 }
@@ -29,15 +29,15 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/emma-smith/",
       },
       {
         name: "Facebook",
-        url: "https://www.facebook.com/",
+        url: "https://www.facebook.com/emma.smith",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/emma.smith/",
       },
     ],
   },
@@ -48,15 +48,15 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/john-doe/",
       },
       {
         name: "Facebook",
-        url: "https://www.facebook.com/",
+        url: "https://www.facebook.com/john.doe",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/john.doe/",
       },
     ],
   },
@@ -67,12 +67,11 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/ashley-ross/",
       },
-
       {
         name: "Instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/ashley.ross/",
       },
     ],
   },
@@ -83,11 +82,11 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/bruce-rogers/",
       },
       {
         name: "Facebook",
-        url: "https://www.facebook.com/",
+        url: "https://www.facebook.com/bruce.rogers",
       },
     ],
   },
@@ -98,30 +97,27 @@ export const Team = () => {
     switch (iconName) {
       case "Linkedin":
         return <Linkedin size="20" />;
-
       case "Facebook":
         return <Facebook size="20" />;
-
       case "Instagram":
         return <Instagram size="20" />;
+      default:
+        return null;
     }
   };
 
   return (
-    <section
-      id="team"
-      className="container py-24 sm:py-32"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold">
+    <section id="team" className="container py-24 sm:py-32">
+      <h2 className="text-3xl md:text-4xl font-bold text-center">
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Our Dedicated{" "}
         </span>
         Crew
       </h2>
 
-      <p className="mt-4 mb-10 text-xl text-muted-foreground">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor pariatur sit!
+      <p className="mt-4 mb-10 text-xl text-muted-foreground text-center">
+        Meet the talented individuals who are passionate about driving our
+        vision forward.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
@@ -144,11 +140,15 @@ export const Team = () => {
               </CardHeader>
 
               <CardContent className="text-center pb-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>
+                  {name} is a dedicated and skilled {position} with a passion
+                  for delivering innovative solutions. Connect with {name} on
+                  social media!
+                </p>
               </CardContent>
 
-              <CardFooter>
-                {socialNetworks.map(({ name, url }: SociaNetworkslProps) => (
+              <CardFooter className="flex justify-center space-x-4">
+                {socialNetworks.map(({ name, url }: SocialNetworksProps) => (
                   <div key={name}>
                     <a
                       rel="noreferrer noopener"

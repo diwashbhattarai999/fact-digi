@@ -1,31 +1,30 @@
 import { Button } from "./ui/button";
 import { buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export const Hero = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
-      <div className="text-center lg:text-start space-y-6">
+      <div className="text-center lg:text-start space-y-8">
         <main className="text-5xl md:text-6xl font-bold">
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Shadcn
+            <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+              Transform
             </span>{" "}
-            landing page
+            Your Business
           </h1>{" "}
-          for{" "}
+          with{" "}
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              React
-            </span>{" "}
-            developers
+            <span className="inline bg-gradient-to-r from-green-500 to-teal-400 text-transparent bg-clip-text">
+              Fact-Digi
+            </span>
           </h2>
         </main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Build your React landing page effortlessly with the required sections
-          to your project.
+        <p className="text-lg text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
+          Empower your growth with cutting-edge solutions in Business
+          Intelligence, Artificial Intelligence, Data Management, and Web &
+          Mobile Application Development.
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
@@ -39,8 +38,7 @@ export const Hero = () => {
               variant: "outline",
             })}`}
           >
-            Github Repository
-            <GitHubLogoIcon className="ml-2 w-5 h-5" />
+            Learn More
           </a>
         </div>
       </div>

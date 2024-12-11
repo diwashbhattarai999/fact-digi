@@ -27,57 +27,53 @@ interface PricingProps {
 const pricingList: PricingProps[] = [
   {
     title: "Free",
-    popular: 0,
+    popular: PopularPlanType.NO,
     price: 0,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
+    description: "Perfect for individuals starting out, with limited features.",
     buttonText: "Get Started",
     benefitList: [
       "1 Team member",
       "2 GB Storage",
-      "Upto 4 pages",
+      "Up to 4 pages",
       "Community support",
-      "lorem ipsum dolor",
+      "Email support",
     ],
   },
   {
     title: "Premium",
-    popular: 1,
+    popular: PopularPlanType.YES,
     price: 5,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
+      "Ideal for small teams needing more resources and priority support.",
     buttonText: "Start Free Trial",
     benefitList: [
-      "4 Team member",
+      "4 Team members",
       "4 GB Storage",
-      "Upto 6 pages",
+      "Up to 6 pages",
       "Priority support",
-      "lorem ipsum dolor",
+      "Advanced analytics",
     ],
   },
   {
     title: "Enterprise",
-    popular: 0,
+    popular: PopularPlanType.NO,
     price: 40,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Contact US",
+      "Best suited for larger teams requiring dedicated support and increased resources.",
+    buttonText: "Contact Us",
     benefitList: [
-      "10 Team member",
+      "10 Team members",
       "8 GB Storage",
-      "Upto 10 pages",
-      "Priority support",
-      "lorem ipsum dolor",
+      "Up to 10 pages",
+      "Dedicated support",
+      "Custom integrations",
     ],
   },
 ];
 
 export const Pricing = () => {
   return (
-    <section
-      id="pricing"
-      className="container py-24 sm:py-32"
-    >
+    <section id="pricing" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold text-center">
         Get
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -87,36 +83,31 @@ export const Pricing = () => {
         Access
       </h2>
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        reiciendis.
+        Choose the plan that fits your needs and grow with us.
       </h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {pricingList.map((pricing: PricingProps) => (
           <Card
             key={pricing.title}
-            className={
+            className={`${
               pricing.popular === PopularPlanType.YES
                 ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10"
                 : ""
-            }
+            }`}
           >
             <CardHeader>
-              <CardTitle className="flex item-center justify-between">
+              <CardTitle className="flex items-center justify-between">
                 {pricing.title}
-                {pricing.popular === PopularPlanType.YES ? (
-                  <Badge
-                    variant="secondary"
-                    className="text-sm text-primary"
-                  >
+                {pricing.popular === PopularPlanType.YES && (
+                  <Badge variant="secondary" className="text-sm text-primary">
                     Most popular
                   </Badge>
-                ) : null}
+                )}
               </CardTitle>
               <div>
                 <span className="text-3xl font-bold">${pricing.price}</span>
                 <span className="text-muted-foreground"> /month</span>
               </div>
-
               <CardDescription>{pricing.description}</CardDescription>
             </CardHeader>
 
@@ -129,11 +120,8 @@ export const Pricing = () => {
             <CardFooter className="flex">
               <div className="space-y-4">
                 {pricing.benefitList.map((benefit: string) => (
-                  <span
-                    key={benefit}
-                    className="flex"
-                  >
-                    <Check className="text-green-500" />{" "}
+                  <span key={benefit} className="flex items-center">
+                    <Check className="text-green-500" />
                     <h3 className="ml-2">{benefit}</h3>
                   </span>
                 ))}
