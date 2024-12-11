@@ -1,11 +1,11 @@
 # Use a Node.js base image to build the project
-FROM node:16 as build
+FROM node:20 AS build
 
 # Set the working directory
 WORKDIR /app
 
 # Install pnpm globally
-RUN npm install -g pnpm
+RUN npm install -g pnpm@latest
 
 # Copy package.json and pnpm-lock.yaml (if exists) to install dependencies
 COPY package.json pnpm-lock.yaml ./
