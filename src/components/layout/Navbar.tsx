@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 import {
   NavigationMenu,
@@ -16,6 +17,8 @@ import {
 
 import { buttonVariants } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import Logo from "../Logo";
+import { cn } from "@/lib/utils";
 
 interface RouteProps {
   href: string;
@@ -28,12 +31,12 @@ const routeList: RouteProps[] = [
     label: "Features",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "#about",
+    label: "About Us",
   },
   {
-    href: "#pricing",
-    label: "Pricing",
+    href: "#services",
+    label: "Services",
   },
   {
     href: "#faq",
@@ -43,18 +46,51 @@ const routeList: RouteProps[] = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 150) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      if (currentScrollY > 100) {
+        setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
+      } else {
+        setScrollDirection("up");
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background border border-border/20 dark:bg-background">
+    <motion.header
+      initial={{ y: 0 }}
+      // animate={{ y: scrollDirection === "up" ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className={cn(
+        "fixed backdrop-blur top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent",
+        { "bg-background/95": isScrolled }
+      )}
+    >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
+        <NavigationMenuList className="container h-20 px-4 w-screen flex justify-between">
           <NavigationMenuItem className="font-bold flex">
-            <a
-              rel="noreferrer noopener"
-              href="/"
-              className="ml-2 font-bold text-xl flex"
-            >
-              Fact Digi
-            </a>
+            <Logo />
           </NavigationMenuItem>
 
           {/* mobile */}
@@ -115,6 +151,6 @@ export const Navbar = () => {
           </div>
         </NavigationMenuList>
       </NavigationMenu>
-    </header>
+    </motion.header>
   );
 };

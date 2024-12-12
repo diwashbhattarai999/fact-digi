@@ -1,4 +1,5 @@
 import { LogoIcon } from "../Icons";
+import Logo from "../Logo";
 
 export const Footer = () => {
   return (
@@ -7,14 +8,9 @@ export const Footer = () => {
 
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
-          <a
-            rel="noreferrer noopener"
-            href="/"
-            className="font-bold text-xl flex"
-          >
-            <LogoIcon />
-            Fact-Digi
-          </a>
+          <div className="flex">
+            <Logo />
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">

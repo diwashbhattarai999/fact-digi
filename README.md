@@ -4,8 +4,7 @@
 
 Fact Digi is a cutting-edge company providing services in **Business Intelligence**,
 **Artificial Intelligence**, **Data Solutions**, and **Web & Mobile Application Development**.
-Build modern, responsive landing pages for showcasing your digital solutions effortlessly
-using this pre-designed template powered by **Shadcn/UI**, **React**, **TypeScript**, and **TailwindCSS**.
+Build modern, responsive landing pages for showcasing your digital solutions effortlessly.
 
 [**Visit Our Website**](http://factdigi.com)
 

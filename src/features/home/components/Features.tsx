@@ -6,42 +6,38 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import imageAutomation from "@/assets/features/automation.webp";
-import imageDataSolutions from "@/assets/features/data-solutions.webp";
-import imageAIBI from "@/assets/features/ai-bi.webp";
-import imageWebApps from "@/assets/features/ai-bi.webp";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { MedalIcon, MapIcon, PlaneIcon, GiftIcon } from "@/components/Icons";
 
 interface FeatureProps {
+  icon: JSX.Element;
   title: string;
   description: string;
-  image: string;
 }
 
 const features: FeatureProps[] = [
   {
-    title: "GenAI Consulting for Process Automation",
+    icon: <MedalIcon />,
+    title: "GenAI Consulting Services",
     description:
       "Streamline operations and reduce manual effort with cutting-edge Generative AI solutions tailored for process automation.",
-    image: imageAutomation,
   },
   {
+    icon: <MapIcon />,
     title: "Data Solutions Provider",
     description:
       "Transform raw data into actionable insights with advanced data processing, integration, and analytics services.",
-    image: imageDataSolutions,
   },
   {
+    icon: <PlaneIcon />,
     title: "AI/BI Solutions",
     description:
       "Empower your business decisions with Artificial Intelligence and Business Intelligence tools designed for real-time analytics and forecasting.",
-    image: imageAIBI,
   },
   {
+    icon: <GiftIcon />,
     title: "Web/Mobile Apps",
     description:
       "Create seamless digital experiences with responsive, feature-rich web and mobile applications tailored to your needs.",
-    image: imageWebApps,
   },
 ];
 
@@ -78,13 +74,16 @@ export const Features = () => {
 
       {/* Feature Cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-        {features.map(({ title, description, image }: FeatureProps) => (
+        {features.map(({ icon, title, description }: FeatureProps) => (
           <Card
             key={title}
             className="bg-muted/50 border text-center flex flex-col justify-between"
           >
-            <CardHeader className="h-[6.5rem]">
-              <CardTitle className="text-primary text-xl">{title}</CardTitle>
+            <CardHeader>
+              <CardTitle className="text-primary text-xl grid gap-4 place-items-center">
+                {icon}
+                {title}
+              </CardTitle>
             </CardHeader>
 
             <CardContent>
@@ -93,15 +92,7 @@ export const Features = () => {
               </p>
             </CardContent>
 
-            <CardFooter className="">
-              <Avatar className="size-full rounded-md">
-                <AvatarImage
-                  src={image}
-                  alt={`${title} illustration`}
-                  className="object-cover"
-                />
-              </Avatar>
-            </CardFooter>
+            <CardFooter className="hidden" />
           </Card>
         ))}
       </div>

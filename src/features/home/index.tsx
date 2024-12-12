@@ -5,7 +5,6 @@ import {
   FAQ,
   Features,
   Hero,
-  HowItWorks,
   Newsletter,
   Services,
   Sponsors,
@@ -17,9 +16,8 @@ const Home = () => {
     <>
       <Hero />
       <Sponsors />
-      <About />
-      <HowItWorks />
       <Features />
+      <About />
       <Services />
       <Cta />
       <Team />
