@@ -1,6 +1,6 @@
-import { Button } from "./ui/button";
-import { buttonVariants } from "./ui/button";
-import { HeroCards } from "./HeroCards";
+import { Button } from "../../../components/ui/button";
+import { buttonVariants } from "../../../components/ui/button";
+import { HeroCards } from "../../../components/HeroCards";
 
 export const Hero = () => {
   return (
@@ -9,41 +9,42 @@ export const Hero = () => {
         <main className="text-5xl md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Transform
+              Revolutionize
             </span>{" "}
             Your Business
           </h1>{" "}
           with{" "}
           <h2 className="inline">
             <span className="inline bg-gradient-to-r from-green-500 to-teal-400 text-transparent bg-clip-text">
-              Fact-Digi
+              Generative AI
             </span>
           </h2>
         </main>
 
         <p className="text-lg text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Empower your growth with cutting-edge solutions in Business
-          Intelligence, Artificial Intelligence, Data Management, and Web &
-          Mobile Application Development.
+          We diagnose your processes, uncover automation opportunities, and
+          drive efficiency with the power of AI. Empower your business with
+          cutting-edge solutions in AI, Business Intelligence, Data Solutions,
+          and Web & Mobile Application Development.
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+          <Button>Get a Free Consultation</Button>
 
           <a
             rel="noreferrer noopener"
             href="https://github.com/leoMirandaa/shadcn-landing-page.git"
             target="_blank"
-            className={`w-full md:w-1/3 ${buttonVariants({
+            className={` ${buttonVariants({
               variant: "outline",
             })}`}
           >
-            Learn More
+            Learn How GenAI Can Transform Your Business
           </a>
         </div>
       </div>
 
-      {/* Hero cards sections */}
+      {/* Hero cards section */}
       <div className="z-10">
         <HeroCards />
       </div>

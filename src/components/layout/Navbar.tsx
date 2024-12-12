@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Menu } from "lucide-react";
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -12,9 +14,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+import { buttonVariants } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface RouteProps {
   href: string;

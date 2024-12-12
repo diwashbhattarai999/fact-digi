@@ -1,6 +1,6 @@
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 
-export const Cta = () => {
+const Cta = () => {
   return (
     <section id="cta" className="bg-muted/50 py-16 my-24 sm:my-32">
       <div className="container lg:grid lg:grid-cols-2 gap-12 items-center">
@@ -32,3 +32,5 @@ export const Cta = () => {
     </section>
   );
 };
+
+export default Cta;

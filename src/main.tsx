@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import { ThemeProvider } from "@/components/theme-provider.tsx";
-import "./index.css";
+import { RouterProvider } from "react-router";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
-);
+import { router } from "@/app/routes/router";
+
+import "./styles/index.css";
+import "./styles/tailwind.css";
+
+const rootElement = document.getElementById("root")!;
+
+if (!rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
+}
