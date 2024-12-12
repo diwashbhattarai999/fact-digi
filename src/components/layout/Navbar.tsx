@@ -81,6 +81,7 @@ export const Navbar = () => {
     <motion.header
       initial={{ y: 0 }}
       // animate={{ y: scrollDirection === "up" ? 0 : -100 }}
+      animate={{ y: scrollDirection === "up" ? 0 : 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
         "fixed backdrop-blur top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent",
