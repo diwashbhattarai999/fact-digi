@@ -1,4 +1,3 @@
-import { Footer, Navbar } from "@/components/layout";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import {
   About,
