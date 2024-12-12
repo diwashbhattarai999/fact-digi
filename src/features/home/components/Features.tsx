@@ -51,20 +51,20 @@ const featureList: string[] = [
 export const Features = () => {
   return (
     <section id="features" className="container py-24 sm:py-32 space-y-8">
-      <h2 className="text-3xl lg:text-4xl font-bold md:text-center">
+      <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center">
         Unlock{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Incredible Features
         </span>
       </h2>
 
-      <p className="text-center text-xl text-muted-foreground md:w-3/4 mx-auto">
+      <p className="text-center md:text-xl text-muted-foreground md:w-3/4 mx-auto">
         Fact-Digi combines innovation with user-centric solutions to empower
         businesses with modern tools and technologies.
       </p>
 
       {/* Feature Badges */}
-      <div className="flex flex-wrap md:justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {featureList.map((feature: string) => (
           <Badge key={feature} variant="secondary" className="text-sm">
             {feature}

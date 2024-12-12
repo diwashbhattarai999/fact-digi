@@ -63,7 +63,7 @@ export function HoverBorderGradient({
   return (
     <Tag
       className={cn(
-        "relative flex h-min w-fit  flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border bg-background/20 decoration-clone p-px transition duration-500 hover:bg-background/10",
+        "relative flex h-min w-fit flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border bg-background/20 decoration-clone p-px transition duration-500 hover:bg-background/10",
         containerClassName
       )}
       onMouseEnter={() => {

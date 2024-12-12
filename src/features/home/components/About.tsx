@@ -19,7 +19,7 @@ export const About = () => {
                 </span>
                 Fact-Digi
               </h2>
-              <p className="text-lg text-muted-foreground mt-8">
+              <p className="md:text-lg text-muted-foreground mt-8">
                 Fact-Digi is a leading provider of Business Intelligence,
                 Artificial Intelligence, Data Solutions, and Mobile & Web
                 Application Development. Our mission is to empower businesses

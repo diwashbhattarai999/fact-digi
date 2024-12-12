@@ -7,27 +7,27 @@ interface SponsorProps {
 
 const sponsors: SponsorProps[] = [
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "TechWave Ventures",
   },
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "AI Innovators Hub",
   },
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "DataNext Fund",
   },
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "BrightMind Solutions",
   },
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "NextGen Founders",
   },
   {
-    icon: <Radar size={34} />,
+    icon: <Radar className="size-7" />,
     name: "Visionary Partners",
   },
 ];
@@ -52,7 +52,7 @@ export const Sponsors = () => {
             className="flex items-center gap-2 text-muted-foreground/80"
           >
             <span>{icon}</span>
-            <h3 className="text-lg font-semibold">{name}</h3>
+            <h3 className="md:text-lg font-semibold">{name}</h3>
           </div>
         ))}
       </div>
