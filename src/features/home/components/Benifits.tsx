@@ -76,10 +76,10 @@ export const Benefits = () => {
         {BENIFITS.map(({ icon, title, description }: BenifitsProps) => (
           <Card
             key={title}
-            className="bg-muted/50 border text-center flex flex-col justify-between"
+            className="bg-muted/50 border text-center flex flex-col"
           >
             <CardHeader>
-              <CardTitle className="text-gradient text-xl grid gap-4 place-items-center">
+              <CardTitle className="text-gradient text-xl flex flex-col items-center gap-4 h-24">
                 {icon}
                 {title}
               </CardTitle>

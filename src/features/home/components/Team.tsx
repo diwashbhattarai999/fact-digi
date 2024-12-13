@@ -24,7 +24,7 @@ interface SocialNetworksProps {
 const teamList: TeamProps[] = [
   {
     imageUrl: "https://i.pravatar.cc/150?img=35",
-    name: "Emma Smith",
+    name: "Sajal Joshi",
     position: "Product Manager",
     socialNetworks: [
       {
@@ -43,7 +43,7 @@ const teamList: TeamProps[] = [
   },
   {
     imageUrl: "https://i.pravatar.cc/150?img=60",
-    name: "John Doe",
+    name: "Ayush Pandey",
     position: "Tech Lead",
     socialNetworks: [
       {
@@ -61,9 +61,9 @@ const teamList: TeamProps[] = [
     ],
   },
   {
-    imageUrl: "https://i.pravatar.cc/150?img=36",
-    name: "Ashley Ross",
-    position: "Frontend Developer",
+    imageUrl: "https://i.pravatar.cc/150?img=18",
+    name: "Ayush Neupane Khatri",
+    position: "Backend Developer",
     socialNetworks: [
       {
         name: "Linkedin",
@@ -77,8 +77,8 @@ const teamList: TeamProps[] = [
   },
   {
     imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Bruce Rogers",
-    position: "Backend Developer",
+    name: "Diwash Bhattarai",
+    position: "Frontend Developer",
     socialNetworks: [
       {
         name: "Linkedin",
@@ -107,7 +107,10 @@ export const Team = () => {
   };
 
   return (
-    <section id="team" className="container py-24 sm:py-32">
+    <section
+      id="team"
+      className="container py-24 sm:py-32"
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-center">
         <span className="text-gradient">Our Dedicated </span>
         Crew

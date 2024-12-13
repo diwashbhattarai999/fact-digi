@@ -69,7 +69,7 @@ export const FAQ = () => {
         <a
           rel="noreferrer noopener"
           href="#"
-          className="text-primary transition-all border-primary hover:border-b-2"
+          className="text-brand dark:text-brand-100 transition-all border-brand dark:border-brand-100 hover:border-b-2"
         >
           Contact us
         </a>

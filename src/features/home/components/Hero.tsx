@@ -55,7 +55,8 @@ const HeroActions = () => (
 );
 
 const HeroImages = () => (
-  <div className="z-10 relative size-full max-lg:hidden">
+  <div className="relative z-10 size-full max-lg:hidden flex justify-center items-center">
+    <div className="shadow"></div>
     <Avatar className="absolute -top-24 -left-32 size-[30rem] scale-x-[-1]">
       <AvatarImage src={HeroImg1} alt="Hero Image 1" />
     </Avatar>
@@ -75,8 +76,6 @@ export const Hero = () => {
           <HeroActions />
         </div>
         <HeroImages />
-        {/* Add shadow for aesthetic */}
-        <div className="shadow"></div>
       </section>
     </BackgroundBeamsWithCollision>
   );

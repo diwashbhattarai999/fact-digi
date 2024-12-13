@@ -12,7 +12,6 @@ import {
   Smartphone,
   Workflow,
 } from "lucide-react";
-import { Link } from "react-router";
 
 interface ServiceProps {
   title: string;
@@ -82,13 +81,13 @@ export const Services = () => {
         {/* CTA Button */}
         <div className="mt-12 text-center">
           <Button className="w-64 rounded-full">
-            <Link
-              to={"#contact"}
+            <a
+              href={"#how-it-works"}
               className="flex items-center gap-2 justify-center"
             >
               Discover How We Work
               <ArrowRight className="size-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
