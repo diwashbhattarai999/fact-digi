@@ -82,6 +82,16 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "gradient-brand":
+          "linear-gradient(to right, hsl(var(--brand)), hsl(var(--brand-100)))",
+        "gradient-primary":
+          "linear-gradient(to right, hsl(var(--primary)), hsl(var(--brand)))",
+        "text-gradient-brand":
+          "linear-gradient(to bottom, hsl(var(--brand)) 50%, hsl(var(--brand-100)) 50%)",
+        "text-grandient-brand-dark":
+          "linear-gradient(to bottom, hsl(var(--brand-100)) 50%, hsl(var(--brand-100)) 50%)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

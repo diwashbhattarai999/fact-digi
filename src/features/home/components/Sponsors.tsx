@@ -51,7 +51,7 @@ const sponsors: SponsorProps[] = [
 
 const SponsorCard = ({ icon, name, description }: SponsorProps) => (
   <div className="flex flex-col items-center text-center gap-2">
-    <span className="text-primary">{icon}</span>
+    <span className="text-brand dark:text-brand-100">{icon}</span>
     <h3 className="text-lg font-semibold">{name}</h3>
     {description && (
       <p className="text-sm text-muted-foreground">{description}</p>
@@ -62,7 +62,7 @@ const SponsorCard = ({ icon, name, description }: SponsorProps) => (
 export const Sponsors = () => {
   return (
     <section id="sponsors" className="container py-24 sm:py-32">
-      <h2 className="text-center text-2xl lg:text-3xl font-bold mb-8 text-primary">
+      <h2 className="text-center text-2xl lg:text-3xl font-bold mb-8 text-gradient">
         Trusted by Industry Leaders
       </h2>
       <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">

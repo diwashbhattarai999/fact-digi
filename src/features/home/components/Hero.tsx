@@ -17,13 +17,13 @@ const HeroHeadline = () => (
       </HoverBorderGradient>
     </div>
     <h1>
-      <span className="inline bg-gradient-to-r from-brand to-brand-100 text-transparent bg-clip-text">
+      <span className="inline bg-gradient-brand text-transparent bg-clip-text">
         Revolutionize
       </span>{" "}
       Your Business with
     </h1>
     <h2>
-      <span className="inline bg-gradient-to-r from-primary to-brand text-transparent bg-clip-text">
+      <span className="inline bg-gradient-primary text-transparent bg-clip-text">
         Generative AI
       </span>
     </h2>
@@ -40,13 +40,13 @@ const HeroDescription = () => (
 );
 
 const HeroActions = () => (
-  <div className="flex items-center gap-4 flex-col md:flex-row">
-    <Button className="max-md:w-full">Get a Free Consultation</Button>
-    <Link to={"#"}>
+  <div className="flex items-center gap-4 flex-col sm:flex-row justify-center lg:justify-normal">
+    <Button className="max-sm:w-full">Get a Free Consultation</Button>
+    <Link to={"#"} className="max-sm:w-full">
       <Button
         variant={"outline"}
         size={"lg"}
-        className="max-md:w-full text-wrap"
+        className="w-full text-wrap max-sm:h-14"
       >
         Learn How GenAI Can Transform Your Business
       </Button>
@@ -56,7 +56,7 @@ const HeroActions = () => (
 
 const HeroImages = () => (
   <div className="z-10 relative size-full max-lg:hidden">
-    <Avatar className="absolute -top-24 -left-10 size-[28rem] scale-x-[-1]">
+    <Avatar className="absolute -top-24 -left-32 size-[30rem] scale-x-[-1]">
       <AvatarImage src={HeroImg1} alt="Hero Image 1" />
     </Avatar>
     <Avatar className="absolute -top-20 right-0 size-[32rem] scale-x-[-1]">

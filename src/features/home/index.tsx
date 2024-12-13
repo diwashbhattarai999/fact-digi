@@ -60,7 +60,10 @@ const Home = () => {
       {/* How It Works Section */}
       <HowItWorks />
 
+      {/* CTA Section */}
       <Cta />
+
+      {/* Team Section */}
       <Team />
 
       {/* FAQ Section */}

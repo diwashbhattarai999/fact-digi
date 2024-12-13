@@ -8,10 +8,7 @@ const Cta = () => {
         <div className="lg:col-start-1">
           <h2 className="text-3xl md:text-4xl font-bold">
             All Your
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-              {" "}
-              Ideas & Concepts{" "}
-            </span>
+            <span className="text-gradient"> Ideas & Concepts </span>
             In One Interface
           </h2>
           <p className="text-muted-foreground text-xl mt-4 mb-8 lg:mb-0">
