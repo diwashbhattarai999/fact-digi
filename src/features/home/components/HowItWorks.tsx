@@ -68,12 +68,12 @@ export const HowItWorks = () => {
 
       {/* CTA Button */}
       <div className="mt-12 text-center">
-        <Link to="#contact">
+        <a href="/#contact">
           <Button className="rounded-full w-72">
             Schedule Your Free Process Audit
             <ArrowRight className="size-4 mt-0.5" />
           </Button>
-        </Link>
+        </a>
       </div>
     </section>
   );

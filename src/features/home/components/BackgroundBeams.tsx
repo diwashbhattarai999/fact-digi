@@ -67,10 +67,11 @@ export const BackgroundBeamsWithCollision = ({
 
   return (
     <div
+      id="home"
       ref={parentRef}
       className={cn(
-        "h-screen 2xl:h-[60rem] bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex lg:items-center overflow-hidden",
-        className
+        "h-screen 2xl:h-[45rem] bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex lg:items-center overflow-hidden",
+        className,
       )}
     >
       {beams.map((beam) => (
@@ -199,7 +200,7 @@ const CollisionMechanism = React.forwardRef<
         }}
         className={cn(
           "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
-          beamOptions.className
+          beamOptions.className,
         )}
       />
       <AnimatePresence>

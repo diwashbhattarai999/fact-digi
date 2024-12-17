@@ -48,7 +48,7 @@ const serviceList: ServiceProps[] = [
 
 export const Services = () => {
   return (
-    <section id="services" className="container py-24 sm:pt-52 sm:pb-32">
+    <section id="services" className="container py-16">
       <div className="w-full flex flex-col">
         <h2 className="text-3xl md:text-4xl font-bold">
           Your <span className="text-gradient">AI Journey Starts Here</span>

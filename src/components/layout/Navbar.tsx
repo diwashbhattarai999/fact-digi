@@ -27,23 +27,23 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#services",
+    href: "/#services",
     label: "Services",
   },
   {
-    href: "#benefits",
+    href: "/#benefits",
     label: "Benefits",
   },
   {
-    href: "#how-it-works",
+    href: "/#how-it-works",
     label: "How It Works",
   },
   {
-    href: "#team",
+    href: "/#team",
     label: "Team",
   },
   {
-    href: "#faq",
+    href: "/#faq",
     label: "FAQ",
   },
 ];
@@ -89,7 +89,7 @@ export const Navbar = () => {
       transition={{ duration: 0.3 }}
       className={cn(
         "fixed backdrop-blur top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent",
-        { "bg-background/95": isScrolled }
+        { "bg-background/95": isScrolled },
       )}
     >
       <NavigationMenu className="mx-auto">

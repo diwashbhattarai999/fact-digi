@@ -40,6 +40,7 @@ import {
   Sponsors,
   Cta,
   Team,
+  Contact,
 } from "@/features/home/components";
 
 const Home = () => {
@@ -68,6 +69,9 @@ const Home = () => {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* Scroll to Top */}
       <ScrollToTop />

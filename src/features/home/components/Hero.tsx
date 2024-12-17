@@ -41,7 +41,10 @@ const HeroDescription = () => (
 
 const HeroActions = () => (
   <div className="flex items-center gap-4 flex-col sm:flex-row justify-center lg:justify-normal">
-    <Button className="max-sm:w-full">Get a Free Consultation</Button>
+    <a href={"/#contact"}>
+      <Button className="max-sm:w-full">Get a Free Consultation</Button>
+    </a>
+
     <Link to={"#"} className="max-sm:w-full">
       <Button
         variant={"outline"}

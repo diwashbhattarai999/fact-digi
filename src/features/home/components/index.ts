@@ -7,6 +7,7 @@ import { Sponsors } from "./Sponsors";
 import { Team } from "./Team";
 import { Benefits } from "./Benifits";
 import { HowItWorks } from "./HowItWorks";
+import { Contact } from "./Contact";
 
 export {
   Hero,
@@ -18,4 +19,5 @@ export {
   Cta,
   Team,
   Sponsors,
+  Contact,
 };
