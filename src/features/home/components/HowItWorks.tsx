@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cpu, Target, Rocket, Monitor, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 
 const steps = [
   {
