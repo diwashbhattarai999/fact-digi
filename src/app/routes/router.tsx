@@ -1,15 +1,11 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router";
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router';
 
-import App from "@/app";
-import NotFound from "@/components/errors/NotFound";
-import { ROUTES } from "@/constants/routes";
+import App from '@/app';
+import NotFound from '@/components/errors/NotFound';
+import { ROUTES } from '@/constants/routes';
 
-import AuthRoutes from "./auth/Auth.routes";
-import UnAuthRoutes from "./unauth/UnAuth.routes";
+import AuthRoutes from './auth/Auth.routes';
+import UnAuthRoutes from './unauth/UnAuth.routes';
 
 /**
  * Router configuration for the application

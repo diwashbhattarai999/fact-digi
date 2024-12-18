@@ -1,6 +1,7 @@
-import UnAuthLayout from "@/components/layout/UnAuthLayout";
-import Home from "@/features/home";
-import { Route } from "react-router";
+import { Route } from 'react-router';
+
+import UnAuthLayout from '@/components/layout/UnAuthLayout';
+import Home from '@/features/home';
 
 /**
  * UnAuth routes are used to define the unauth routes.

@@ -1,4 +1,4 @@
-import { Radar, Globe, Briefcase, BarChart2, Award } from "lucide-react";
+import { Award, BarChart2, Briefcase, Globe, Radar } from 'lucide-react';
 
 interface SponsorProps {
   icon: JSX.Element;
@@ -6,72 +6,69 @@ interface SponsorProps {
   description?: string;
 }
 
-const sponsors: SponsorProps[] = [
+const sponsors: Array<SponsorProps> = [
   {
     icon: <Radar className="size-7" />,
-    name: "TechWave Ventures",
-    description: "Driving innovation in AI and BI investments.",
+    name: 'TechWave Ventures',
+    description: 'Driving innovation in AI and BI investments.',
   },
   {
     icon: <Globe className="size-7" />,
-    name: "AI Innovators Hub",
-    description: "Pioneering transformative AI solutions.",
+    name: 'AI Innovators Hub',
+    description: 'Pioneering transformative AI solutions.',
   },
   {
     icon: <Briefcase className="size-7" />,
-    name: "DataNext Fund",
-    description: "Empowering next-gen data solutions.",
+    name: 'DataNext Fund',
+    description: 'Empowering next-gen data solutions.',
   },
   {
     icon: <BarChart2 className="size-7" />,
-    name: "BrightMind Solutions",
-    description: "Delivering tailored business intelligence.",
+    name: 'BrightMind Solutions',
+    description: 'Delivering tailored business intelligence.',
   },
   {
     icon: <Award className="size-7" />,
-    name: "FutureTech Labs",
-    description: "Recognizing excellence in technology innovation.",
+    name: 'FutureTech Labs',
+    description: 'Recognizing excellence in technology innovation.',
   },
   {
     icon: <Radar className="size-7" />,
-    name: "NextGen Founders",
-    description: "Partnering for scalable AI ventures.",
+    name: 'NextGen Founders',
+    description: 'Partnering for scalable AI ventures.',
   },
   {
     icon: <Radar className="size-7" />,
-    name: "Visionary Partners",
-    description: "Enabling futuristic tech ecosystems.",
+    name: 'Visionary Partners',
+    description: 'Enabling futuristic tech ecosystems.',
   },
   {
     icon: <Globe className="size-7" />,
-    name: "DataWorks",
-    description: "Transforming data into actionable insights.",
+    name: 'DataWorks',
+    description: 'Transforming data into actionable insights.',
   },
 ];
 
 const SponsorCard = ({ icon, name, description }: SponsorProps) => (
-  <div className="flex flex-col items-center text-center gap-2">
+  <div className="flex flex-col items-center gap-2 text-center">
     <span className="text-brand dark:text-brand-100">{icon}</span>
     <h3 className="text-lg font-semibold">{name}</h3>
-    {description && (
-      <p className="text-sm text-muted-foreground">{description}</p>
-    )}
+    {description && <p className="text-sm text-muted-foreground">{description}</p>}
   </div>
 );
 
 export const Sponsors = () => {
   return (
-    <section id="sponsors" className="container py-24 sm:py-32">
-      <h2 className="text-center text-2xl lg:text-3xl font-bold mb-8 text-gradient">
+    <section className="container py-24 sm:py-32" id="sponsors">
+      <h2 className="text-gradient mb-8 text-center text-2xl font-bold lg:text-3xl">
         Trusted by Industry Leaders
       </h2>
-      <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-        Fact-Digi collaborates with top innovators and investors to deliver
-        cutting-edge solutions in Business Intelligence, Artificial
-        Intelligence, and Data Analytics. Together, we’re shaping the future of
-        digital transformation.
+      <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+        Fact-Digi collaborates with top innovators and investors to deliver cutting-edge solutions
+        in Business Intelligence, Artificial Intelligence, and Data Analytics. Together, we’re
+        shaping the future of digital transformation.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         {sponsors.map((sponsor) => (
           <SponsorCard key={sponsor.name} {...sponsor} />
         ))}

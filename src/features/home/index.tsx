@@ -30,18 +30,18 @@
 
 // export default Home;
 
-import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollToTop } from '@/components/ScrollToTop';
 import {
-  Hero,
   Benefits,
+  Contact,
+  Cta,
+  FAQ,
+  Hero,
   HowItWorks,
   Services,
-  FAQ,
   Sponsors,
-  Cta,
   Team,
-  Contact,
-} from "@/features/home/components";
+} from '@/features/home/components';
 
 const Home = () => {
   return (

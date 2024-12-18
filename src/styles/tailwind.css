@@ -128,6 +128,6 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-b from-brand/50 to-brand dark:from-brand-100/50 dark:to-brand-100 text-transparent bg-clip-text;
+    @apply bg-gradient-to-b from-brand/50 to-brand bg-clip-text text-transparent dark:from-brand-100/50 dark:to-brand-100;
   }
 }

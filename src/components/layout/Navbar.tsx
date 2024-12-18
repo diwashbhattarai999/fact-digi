@@ -1,57 +1,52 @@
-import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from 'react';
 
+import { motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
+
+import { ModeToggle } from '@/components/mode-toggle';
+import { buttonVariants } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+} from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { cn } from '@/lib/utils';
 
-import { buttonVariants } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
-import Logo from "../Logo";
-import { cn } from "@/lib/utils";
+import Logo from '../Logo';
 
 interface RouteProps {
   href: string;
   label: string;
 }
 
-const routeList: RouteProps[] = [
+const routeList: Array<RouteProps> = [
   {
-    href: "/#services",
-    label: "Services",
+    href: '/#services',
+    label: 'Services',
   },
   {
-    href: "/#benefits",
-    label: "Benefits",
+    href: '/#benefits',
+    label: 'Benefits',
   },
   {
-    href: "/#how-it-works",
-    label: "How It Works",
+    href: '/#how-it-works',
+    label: 'How It Works',
   },
   {
-    href: "/#team",
-    label: "Team",
+    href: '/#team',
+    label: 'Team',
   },
   {
-    href: "/#faq",
-    label: "FAQ",
+    href: '/#faq',
+    label: 'FAQ',
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -66,35 +61,35 @@ export const Navbar = () => {
       }
 
       if (currentScrollY > 100) {
-        setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
+        setScrollDirection(currentScrollY > lastScrollY ? 'down' : 'up');
       } else {
-        setScrollDirection("up");
+        setScrollDirection('up');
       }
 
       lastScrollY = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <motion.header
-      initial={{ y: 0 }}
+      animate={{ y: scrollDirection === 'up' ? 0 : 0 }}
       // animate={{ y: scrollDirection === "up" ? 0 : -100 }}
-      animate={{ y: scrollDirection === "up" ? 0 : 0 }}
+      initial={{ y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        "fixed backdrop-blur top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent",
-        { "bg-background/95": isScrolled },
+        'fixed top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent backdrop-blur',
+        { 'bg-background/95': isScrolled }
       )}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-20 px-4 w-screen flex justify-between">
-          <NavigationMenuItem className="font-bold flex">
+        <NavigationMenuList className="container flex h-20 w-screen justify-between px-4">
+          <NavigationMenuItem className="flex font-bold">
             <Logo />
           </NavigationMenuItem>
 
@@ -105,27 +100,29 @@ export const Navbar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
-                  className="flex md:hidden h-5 w-5"
-                  onClick={() => setIsOpen(true)}
+                  className="flex h-5 w-5 md:hidden"
+                  onClick={() => {
+                    setIsOpen(true);
+                  }}
                 >
                   <span className="sr-only">Menu Icon</span>
                 </Menu>
               </SheetTrigger>
 
-              <SheetContent side={"left"}>
+              <SheetContent side={'left'}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
-                  </SheetTitle>
+                  <SheetTitle className="text-xl font-bold">Fact Digi</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                <nav className="mt-4 flex flex-col items-center justify-center gap-2">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
-                      rel="noreferrer noopener"
                       key={label}
+                      className={buttonVariants({ variant: 'ghost' })}
                       href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: "ghost" })}
+                      rel="noreferrer noopener"
+                      onClick={() => {
+                        setIsOpen(false);
+                      }}
                     >
                       {label}
                     </a>
@@ -136,14 +133,14 @@ export const Navbar = () => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          <nav className="hidden gap-2 md:flex">
             {routeList.map((route: RouteProps, i) => (
               <a
-                rel="noreferrer noopener"
-                href={route.href}
                 key={i}
+                href={route.href}
+                rel="noreferrer noopener"
                 className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
+                  variant: 'ghost',
                 })}`}
               >
                 {route.label}
@@ -151,7 +148,7 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
+          <div className="hidden gap-2 md:flex">
             <ModeToggle />
           </div>
         </NavigationMenuList>

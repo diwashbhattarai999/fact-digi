@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface ILogoProps {
   className?: string;
@@ -7,13 +7,10 @@ interface ILogoProps {
 const Logo = ({ className }: ILogoProps) => {
   return (
     <a
+      className={cn('-ml-2 flex items-center justify-center text-2xl font-bold', className)}
       href="/#home"
-      className={cn(
-        "-ml-2 font-bold text-2xl flex items-center justify-center",
-        className,
-      )}
     >
-      <img src="/logo.png" alt="Shadcn Logo" className="size-20" />
+      <img alt="Fact Digi Logo" className="size-20" src="/logo.png" />
       <p className="-ml-1">Fact Digi</p>
     </a>
   );

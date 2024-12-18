@@ -1,12 +1,7 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { TrendingUp, Cpu, DollarSign, BarChart } from "lucide-react";
+import { BarChart, Cpu, DollarSign, TrendingUp } from 'lucide-react';
+
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface BenifitsProps {
   icon: JSX.Element;
@@ -14,81 +9,76 @@ interface BenifitsProps {
   description: string;
 }
 
-const BENIFITS: BenifitsProps[] = [
+const BENIFITS: Array<BenifitsProps> = [
   {
-    icon: <TrendingUp className="text-brand dark:text-brand-100 size-6" />,
-    title: "Boost Efficiency and Productivity",
+    icon: <TrendingUp className="size-6 text-brand dark:text-brand-100" />,
+    title: 'Boost Efficiency and Productivity',
     description:
-      "Leverage AI to automate tasks and optimize workflows, increasing overall efficiency and output.",
+      'Leverage AI to automate tasks and optimize workflows, increasing overall efficiency and output.',
   },
   {
-    icon: <Cpu className="text-brand dark:text-brand-100 size-6" />,
-    title: "Reduce Costs and Manual Effort",
+    icon: <Cpu className="size-6 text-brand dark:text-brand-100" />,
+    title: 'Reduce Costs and Manual Effort',
     description:
-      "AI minimizes manual work, cuts operational costs, and reduces human errors, giving your team more time for strategic tasks.",
+      'AI minimizes manual work, cuts operational costs, and reduces human errors, giving your team more time for strategic tasks.',
   },
   {
-    icon: <DollarSign className="text-brand dark:text-brand-100 size-6" />,
-    title: "Gain Competitive Insights",
+    icon: <DollarSign className="size-6 text-brand dark:text-brand-100" />,
+    title: 'Gain Competitive Insights',
     description:
-      "AI-driven analysis provides insights that help you stay ahead of market trends and make informed decisions.",
+      'AI-driven analysis provides insights that help you stay ahead of market trends and make informed decisions.',
   },
   {
-    icon: <BarChart className="text-brand dark:text-brand-100 size-6" />,
-    title: "Data-Driven Decision Making",
+    icon: <BarChart className="size-6 text-brand dark:text-brand-100" />,
+    title: 'Data-Driven Decision Making',
     description:
-      "Harness AI to turn data into actionable insights, enabling smarter business decisions with quantifiable outcomes.",
+      'Harness AI to turn data into actionable insights, enabling smarter business decisions with quantifiable outcomes.',
   },
 ];
 
-const BENIFITS_BADGES: string[] = [
-  "AI Expertise",
-  "Process Automation",
-  "Custom Solutions",
-  "Optimization",
+const BENIFITS_BADGES: Array<string> = [
+  'AI Expertise',
+  'Process Automation',
+  'Custom Solutions',
+  'Optimization',
 ];
 
 export const Benefits = () => {
   return (
-    <section id="benefits" className="container py-24 sm:py-32 space-y-8">
+    <section className="container space-y-8 py-24 sm:py-32" id="benefits">
       {/* Main Title */}
-      <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center">
+      <h2 className="text-center text-xl font-bold md:text-3xl lg:text-4xl">
         Why Choose <span className="text-gradient">Fact Digi</span> ?
       </h2>
 
       {/* Subtitle */}
-      <p className="text-center md:text-lg text-muted-foreground md:w-3/4 mx-auto">
-        Generative AI is transforming businesses by enhancing efficiency,
-        reducing costs, and providing data-driven insights.
+      <p className="mx-auto text-center text-muted-foreground md:w-3/4 md:text-lg">
+        Generative AI is transforming businesses by enhancing efficiency, reducing costs, and
+        providing data-driven insights.
       </p>
 
       {/* Benifits Badges */}
       <div className="flex flex-wrap justify-center gap-4">
         {BENIFITS_BADGES.map((benifit: string) => (
-          <Badge key={benifit} variant="secondary" className="text-sm">
+          <Badge key={benifit} className="text-sm" variant="secondary">
             {benifit}
           </Badge>
         ))}
       </div>
 
       {/* Benifits Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {BENIFITS.map(({ icon, title, description }: BenifitsProps) => (
-          <Card
-            key={title}
-            className="bg-muted/50 border text-center flex flex-col"
-          >
+          <Card key={title} className="flex flex-col border bg-muted/50 text-center">
             <CardHeader>
-              <CardTitle className="text-gradient text-xl flex flex-col items-center gap-4 h-24">
+              <CardTitle className="text-gradient flex h-24 flex-col items-center gap-4 text-xl">
                 {icon}
                 {title}
               </CardTitle>
             </CardHeader>
 
             <CardContent>
-              <p className="text-muted-foreground line-clamp-4">
-                {description}
-              </p>
+              <p className="line-clamp-4 text-muted-foreground">{description}</p>
             </CardContent>
 
             <CardFooter className="hidden" />
@@ -98,10 +88,10 @@ export const Benefits = () => {
 
       {/* Add Industry Quote */}
       <div className="mt-10 text-center">
-        <blockquote className="italic text-lg text-muted-foreground">
-          "Fact Digi's AI solutions have revolutionized our business operations
-          and transformed the way we approach data analytics."
-          <footer className="block text-brand dark:text-brand-100 font-semibold mt-2">
+        <blockquote className="text-lg italic text-muted-foreground">
+          "Fact Digi's AI solutions have revolutionized our business operations and transformed the
+          way we approach data analytics."
+          <footer className="mt-2 block font-semibold text-brand dark:text-brand-100">
             - John Doe, CEO at Acme Inc.
           </footer>
         </blockquote>

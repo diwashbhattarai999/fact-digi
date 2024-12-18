@@ -1,53 +1,51 @@
-import Logo from "@/components/Logo";
-import FooterSection from "./FooterSection";
+import Logo from '@/components/Logo';
+
+import FooterSection from './FooterSection';
 
 const socialLinks = [
-  { href: "#", label: "Github" },
-  { href: "#", label: "Twitter" },
-  { href: "#", label: "LinkedIn" },
+  { href: '#', label: 'Github' },
+  { href: '#', label: 'Twitter' },
+  { href: '#', label: 'LinkedIn' },
 ];
 
 const serviceLinks = [
-  { href: "#", label: "Business Intelligence" },
-  { href: "#", label: "AI Solutions" },
-  { href: "#", label: "Web & Mobile Apps" },
+  { href: '#', label: 'Business Intelligence' },
+  { href: '#', label: 'AI Solutions' },
+  { href: '#', label: 'Web & Mobile Apps' },
 ];
 
 const companyLinks = [
-  { href: "#", label: "About Us" },
-  { href: "#", label: "Careers" },
-  { href: "#", label: "Contact Us" },
+  { href: '#', label: 'About Us' },
+  { href: '#', label: 'Careers' },
+  { href: '#', label: 'Contact Us' },
 ];
 
 const resourceLinks = [
-  { href: "#", label: "Blog" },
-  { href: "#", label: "Documentation" },
-  { href: "#", label: "Case Studies" },
+  { href: '#', label: 'Blog' },
+  { href: '#', label: 'Documentation' },
+  { href: '#', label: 'Case Studies' },
 ];
 
 export const Footer = () => {
   return (
-    <footer
-      id="footer"
-      className="bg-gradient-to-b from-background via-brand-100/10 to-background"
-    >
-      <hr className="w-11/12 mx-auto" />
+    <footer className="bg-gradient-to-b from-background via-brand-100/10 to-background" id="footer">
+      <hr className="mx-auto w-11/12" />
 
-      <section className="container py-20 flex items-start justify-between gap-x-20 gap-y-10 flex-col xl:flex-row">
-        <Logo className="shrink-0 -mt-3 -ml-5" />
+      <section className="container flex flex-col items-start justify-between gap-x-20 gap-y-10 py-20 xl:flex-row">
+        <Logo className="-ml-5 -mt-3 shrink-0" />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 w-full">
-          <FooterSection title="Follow Us" links={socialLinks} />
-          <FooterSection title="Our Services" links={serviceLinks} />
-          <FooterSection title="Company" links={companyLinks} />
-          <FooterSection title="Resources" links={resourceLinks} />
+        <div className="grid w-full grid-cols-2 gap-10 lg:grid-cols-4">
+          <FooterSection links={socialLinks} title="Follow Us" />
+          <FooterSection links={serviceLinks} title="Our Services" />
+          <FooterSection links={companyLinks} title="Company" />
+          <FooterSection links={resourceLinks} title="Resources" />
         </div>
       </section>
 
-      <section className="container py-3 text-center flex flex-col gap-2 border-t border-border">
+      <section className="container flex flex-col gap-2 border-t border-border py-3 text-center">
         <h3>
-          &copy; 2024 Fact-Digi, a leader in Genarative AI, BI, data solutions,
-          and application development.
+          &copy; 2024 Fact-Digi, a leader in Genarative AI, BI, data solutions, and application
+          development.
         </h3>
       </section>
     </footer>

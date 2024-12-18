@@ -1,23 +1,23 @@
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { toast } from "sonner";
-import emailjs from "emailjs-com";
-import { useState } from "react";
-import { Label } from "@/components/ui/label";
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { toast } from 'sonner';
+import { z } from 'zod';
+
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import emailjs from '@emailjs/browser';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 // Define schema using Zod
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters long."),
-  email: z.string().email("Invalid email address."),
-  phone: z.string().regex(/^\d{10}$/, "Phone number must be 10 digits."),
-  company: z
-    .string()
-    .min(2, "Company name must be at least 2 characters long."),
-  message: z.string().min(10, "Message must be at least 10 characters long."),
+  name: z.string().min(2, 'Name must be at least 2 characters long.'),
+  email: z.string().email('Invalid email address.'),
+  phone: z.string().regex(/^\d{10}$/, 'Phone number must be 10 digits.'),
+  company: z.string().min(2, 'Company name must be at least 2 characters long.'),
+  message: z.string().min(10, 'Message must be at least 10 characters long.'),
 });
 
 // TypeScript type for the form data
@@ -33,103 +33,67 @@ export const Contact = () => {
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    mode: "all",
+    mode: 'all',
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setLoading(true);
 
-    const serviceID = "service_emlmnvm";
-    const templateID = "template_t2600cs";
-    const publicKey = "FX6NjO6LjvXvZSF_3";
+    const serviceID = 'service_emlmnvm';
+    const templateID = 'template_t2600cs';
+    const publicKey = 'FX6NjO6LjvXvZSF_3';
 
     try {
       await emailjs.send(serviceID, templateID, data, publicKey);
-      toast.success("Message sent successfully!");
+      toast.success('Message sent successfully!');
       reset(); // Clear form after successful submission
     } catch (error) {
-      console.error("Failed to send email:", error);
-      toast.error("Failed to send message. Please try again.");
+      console.error('Failed to send email:', error);
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="container py-20 xl:py-32 mx-auto px-4">
-      <h2 className="text-3xl font-semibold mb-6 text-center">
-        Ready to Automate?
-      </h2>
-      <p className="text-lg mb-8 text-center text-gray-600 dark:text-gray-400">
+    <section className="container mx-auto px-4 py-20 xl:py-32" id="contact">
+      <h2 className="mb-6 text-center text-3xl font-semibold">Ready to Automate?</h2>
+      <p className="mb-8 text-center text-lg text-gray-600 dark:text-gray-400">
         Fill out the form below and we’ll get back to you as soon as possible.
       </p>
-      <form
-        className="flex flex-col gap-6 max-w-4xl mx-auto"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <div className="grid md:grid-cols-2 gap-6 w-full">
+      <form className="mx-auto flex max-w-4xl flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
+        <div className="grid w-full gap-6 md:grid-cols-2">
           <div className="space-y-1">
             <Label htmlFor="name">
               Full Name<span className="text-red-500">*</span>
             </Label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="Full Name"
-              {...register("name")}
-            />
-            {errors.name && (
-              <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>
-            )}
+            <Input id="name" placeholder="Full Name" type="text" {...register('name')} />
+            {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
           </div>
           <div className="space-y-1">
             <Label htmlFor="email">
               Email Address<span className="text-red-500">*</span>
             </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="Email Address"
-              {...register("email")}
-            />
-            {errors.email && (
-              <p className="text-sm text-red-600 mt-1">
-                {errors.email.message}
-              </p>
-            )}
+            <Input id="email" placeholder="Email Address" type="email" {...register('email')} />
+            {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 w-full">
+        <div className="grid w-full gap-6 md:grid-cols-2">
           <div className="space-y-1">
             <Label htmlFor="email">
               Phone Number<span className="text-red-500">*</span>
             </Label>
-            <Input
-              type="tel"
-              placeholder="Phone Number"
-              {...register("phone")}
-            />
-            {errors.phone && (
-              <p className="text-sm text-red-600 mt-1">
-                {errors.phone.message}
-              </p>
-            )}
+            <Input placeholder="Phone Number" type="tel" {...register('phone')} />
+            {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
           </div>
           <div className="space-y-1">
             <Label htmlFor="company">
               Company Name<span className="text-red-500">*</span>
             </Label>
-            <Input
-              id="company"
-              type="text"
-              placeholder="Company Name"
-              {...register("company")}
-            />
+            <Input id="company" placeholder="Company Name" type="text" {...register('company')} />
             {errors.company && (
-              <p className="text-sm text-red-600 mt-1">
-                {errors.company.message}
-              </p>
+              <p className="mt-1 text-sm text-red-600">{errors.company.message}</p>
             )}
           </div>
         </div>
@@ -139,22 +103,13 @@ export const Contact = () => {
             <Label htmlFor="message">
               Message<span className="text-red-500">*</span>
             </Label>
-            <Textarea
-              id="message"
-              placeholder="Your Message"
-              {...register("message")}
-              className="bg-muted/50 dark:bg-muted/80 focus:outline-none focus:ring-2 focus:ring-primary transition duration-300 col-span-full"
-            />
+            <Textarea id="message" placeholder="Your Message" {...register('message')} />
           </div>
-          {errors.message && (
-            <p className="text-sm text-red-600 mt-1">
-              {errors.message.message}
-            </p>
-          )}
+          {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
         </div>
 
-        <Button type="submit" size={"lg"} disabled={loading}>
-          {loading ? "Sending..." : "Send Message"}
+        <Button disabled={loading} size={'lg'} type="submit">
+          {loading ? 'Sending...' : 'Send Message'}
         </Button>
       </form>
     </section>

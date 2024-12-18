@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from 'react-router';
 
 interface IFooterLinkProps {
   href: string;
@@ -7,7 +7,7 @@ interface IFooterLinkProps {
 
 const FooterLink = ({ href, children }: IFooterLinkProps) => (
   <div>
-    <Link to={href} className="opacity-60 hover:opacity-100">
+    <Link className="opacity-60 hover:opacity-100" to={href}>
       {children}
     </Link>
   </div>
