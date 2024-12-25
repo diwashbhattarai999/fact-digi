@@ -7,7 +7,7 @@ interface IFooterSectionProps {
 
 const FooterSection = ({ title, links }: IFooterSectionProps) => (
   <div className="flex flex-col gap-2">
-    <h3 className="text-lg font-bold">{title}</h3>
+    <h3 className="font-bold sm:text-lg">{title}</h3>
     {links.map(({ href, label }) => (
       <FooterLink key={label} href={href}>
         {label}

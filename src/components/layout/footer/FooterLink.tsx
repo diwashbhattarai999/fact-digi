@@ -7,7 +7,7 @@ interface IFooterLinkProps {
 
 const FooterLink = ({ href, children }: IFooterLinkProps) => (
   <div>
-    <Link className="opacity-60 hover:opacity-100" to={href}>
+    <Link className="text-sm opacity-60 hover:opacity-100 sm:text-base" to={href}>
       {children}
     </Link>
   </div>

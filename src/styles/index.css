@@ -20,11 +20,11 @@ html {
 @keyframes shadow-slide {
   from {
     background: hsl(var(--brand) / 20%);
-    right: 460px;
+    right: 160px;
   }
   to {
     background: hsl(var(--brand) / 80%);
-    right: 160px;
+    right: 60px;
   }
 }
 

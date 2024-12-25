@@ -15,11 +15,14 @@ const config: Config = {
         DEFAULT: "1rem",
         sm: "1.5rem",
         md: "2.5rem",
-        lg: "3rem",
         xl: "4rem",
       },
       screens: {
-        "2xl": "1400px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
     extend: {

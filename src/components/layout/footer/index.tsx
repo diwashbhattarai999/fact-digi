@@ -29,7 +29,7 @@ const resourceLinks = [
 export const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-background via-brand-100/10 to-background" id="footer">
-      <hr className="mx-auto w-11/12" />
+      <hr className="w-full" />
 
       <section className="container flex flex-col items-start justify-between gap-x-20 gap-y-10 py-20 xl:flex-row">
         <Logo className="-ml-5 -mt-3 shrink-0" />
@@ -42,8 +42,8 @@ export const Footer = () => {
         </div>
       </section>
 
-      <section className="container flex flex-col gap-2 border-t border-border py-3 text-center">
-        <h3>
+      <section className="border-t border-border py-3">
+        <h3 className="container text-center text-xs sm:text-sm">
           &copy; 2024 Fact-Digi, a leader in Genarative AI, BI, data solutions, and application
           development.
         </h3>

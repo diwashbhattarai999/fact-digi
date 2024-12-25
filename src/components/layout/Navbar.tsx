@@ -88,8 +88,8 @@ export const Navbar = () => {
       )}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container flex h-20 w-screen justify-between px-4">
-          <NavigationMenuItem className="flex font-bold">
+        <NavigationMenuList className="container flex h-20 w-screen justify-between">
+          <NavigationMenuItem className="-ml-5 flex font-bold">
             <Logo />
           </NavigationMenuItem>
 

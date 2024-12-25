@@ -14,33 +14,33 @@ import { HoverBorderGradient } from './HoverBorderGradient';
 const carouselData = [
   {
     id: 1,
-    headline: 'Generative AI',
+    headline: 'Generative AI Solutions',
     description:
-      'Unlock the potential of Generative AI to streamline workflows, boost creativity, and deliver unparalleled insights tailored to your business needs.',
+      'Empower your business with Generative AI that drives innovation, automates repetitive tasks, and unlocks new levels of efficiency and creativity.',
     image1: HeroImg1,
     image2: HeroImg2,
   },
   {
     id: 2,
-    headline: 'Data Solutions',
+    headline: 'Advanced Data Analytics',
     description:
-      'Transform raw data into actionable insights with advanced analytics and robust data solutions designed to drive decision-making and growth.',
+      'Transform your data into actionable insights with state-of-the-art analytics that help you stay ahead in today’s competitive landscape.',
     image1: HeroImg2,
     image2: HeroImg1,
   },
   {
     id: 3,
-    headline: 'AI/BI Solutions',
+    headline: 'AI & BI Integration',
     description:
-      'Harness the power of Artificial Intelligence and Business Intelligence to uncover trends, predict outcomes, and automate processes seamlessly.',
+      'Leverage AI-driven intelligence to streamline processes, predict outcomes, and gain a competitive edge with robust business intelligence solutions.',
     image1: HeroImg1,
     image2: HeroImg2,
   },
   {
     id: 4,
-    headline: 'Web & Mobile Development',
+    headline: 'Custom Web & Mobile Solutions',
     description:
-      'Create innovative web and mobile applications with cutting-edge technologies that enhance user experiences and empower digital transformation.',
+      'Reimagine user experiences with cutting-edge web and mobile app development tailored to your unique business needs and goals.',
     image1: HeroImg2,
     image2: HeroImg1,
   },
@@ -51,7 +51,7 @@ interface IHeroHeadlineProps {
 }
 
 const HeroHeadline = ({ headline }: IHeroHeadlineProps) => (
-  <div className="max-w-4xl text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+  <div className="text-3xl font-bold sm:text-4xl md:text-5xl lg:max-w-xl lg:text-6xl xl:max-w-3xl">
     <div className="flex w-full items-center justify-center lg:justify-start">
       <HoverBorderGradient
         className="w-fit cursor-auto rounded-full px-3 py-0.5 text-xs text-brand-50/90 dark:text-primary"
@@ -75,7 +75,9 @@ interface IHeroDescriptionProps {
 }
 
 const HeroDescription = ({ description }: IHeroDescriptionProps) => (
-  <p className="mx-auto text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0">{description}</p>
+  <p className="mx-auto max-w-lg text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0">
+    {description}
+  </p>
 );
 
 const HeroActions = () => (
@@ -98,12 +100,12 @@ interface IHeroImagesProps {
 }
 
 const HeroImages = ({ image1, image2 }: IHeroImagesProps) => (
-  <div className="relative z-10 flex h-full items-center justify-center max-lg:hidden">
+  <div className="relative flex h-full items-center justify-center max-lg:hidden">
     <div className="shadow"></div>
-    <Avatar className="absolute -left-32 -top-24 size-[30rem] scale-x-[-1]">
+    <Avatar className="absolute right-0 top-0 -z-10 size-[30rem] -translate-x-40 -translate-y-10 scale-x-[-1] max-xl:opacity-20">
       <AvatarImage alt="Hero Image 1" src={image1} />
     </Avatar>
-    <Avatar className="absolute -top-20 right-0 size-[32rem] scale-x-[-1]">
+    <Avatar className="absolute right-0 top-0 -z-10 size-[32rem] -translate-y-10 translate-x-20 scale-x-[-1] max-xl:opacity-20">
       <AvatarImage alt="Hero Image 2" src={image2} />
     </Avatar>
   </div>
@@ -119,13 +121,13 @@ export const Hero = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 5000,
           }),
         ]}
       >
-        <CarouselContent className="w-full">
+        <CarouselContent>
           {carouselData.map((carousel, index) => (
-            <CarouselItem key={index} className="w-full pl-0">
+            <CarouselItem key={index}>
               <BackgroundBeamsWithCollision>
                 <section className="container z-10 flex flex-col justify-center pt-20 md:gap-10 md:pt-10 lg:flex-row">
                   <div className="flex w-full flex-col gap-8 text-center lg:text-start">
