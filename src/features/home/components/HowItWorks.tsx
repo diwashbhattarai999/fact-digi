@@ -46,7 +46,7 @@ export const HowItWorks = () => {
       </div>
 
       {/* Stepwise Process */}
-      <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-16 grid gap-12 md:grid-cols-2 xl:grid-cols-4">
         {steps.map(({ title, description, icon }) => (
           <Card key={title} className="flex flex-col border bg-muted/50 p-6 text-center shadow-sm">
             <CardHeader className="flex flex-col items-center justify-center gap-2">

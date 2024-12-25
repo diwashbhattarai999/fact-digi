@@ -3,7 +3,7 @@ import { Button } from '../../../components/ui/button';
 const Cta = () => {
   return (
     <section className="my-24 bg-muted/50 py-16 sm:my-32" id="cta">
-      <div className="container items-center gap-12 lg:grid lg:grid-cols-2">
+      <div className="container items-center gap-12 max-sm:text-center lg:grid lg:grid-cols-2">
         {/* Left Section: Title and Description */}
         <div className="lg:col-start-1">
           <h2 className="text-3xl font-bold md:text-4xl">
