@@ -6,7 +6,12 @@ import HeroImg2 from '@/assets/hero/Robot1.png';
 import HeroImg1 from '@/assets/hero/Robot2.png';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPagination,
+} from '@/components/ui/carousel';
 
 import { BackgroundBeamsWithCollision } from './BackgroundBeams';
 import { HoverBorderGradient } from './HoverBorderGradient';
@@ -141,6 +146,8 @@ export const Hero = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+
+        <CarouselPagination />
       </Carousel>
     </>
   );

@@ -231,11 +231,50 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = 'CarouselNext';
 
+const CarouselPagination = () => {
+  const { api } = useCarousel();
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [slideCount, setSlideCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    setSlideCount(api.slideNodes().length); // Get total slides
+
+    const onSelect = () => {
+      setSelectedIndex(api.selectedScrollSnap()); // Update selected slide index
+    };
+
+    api.on('select', onSelect); // Listen for slide change
+
+    return () => {
+      api.off('select', onSelect); // Remove
+    };
+  }, [api]);
+
+  return (
+    <div className="absolute bottom-8 right-8 flex items-center gap-2">
+      {Array.from({ length: slideCount }).map((_, index) => (
+        <button
+          key={index}
+          aria-label={`Go to slide ${index + 1}`}
+          className={cn(
+            'size-2.5 rounded-full transition-all',
+            selectedIndex === index ? 'bg-primary' : 'bg-slate-500'
+          )}
+          onClick={() => api?.scrollTo(index)} // Navigate to slide
+        />
+      ))}
+    </div>
+  );
+};
+
 export {
   Carousel,
   type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
+  CarouselPagination,
   CarouselPrevious,
 };
