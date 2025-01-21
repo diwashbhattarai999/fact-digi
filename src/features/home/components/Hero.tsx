@@ -19,36 +19,36 @@ import { HoverBorderGradient } from './HoverBorderGradient';
 const carouselData = [
   {
     id: 1,
-    headline: 'Generative AI Solutions',
+    headline: 'Revolutionize Your Business with Generative AI',
     description:
-      'Empower your business with Generative AI that drives innovation, automates repetitive tasks, and unlocks new levels of efficiency and creativity.',
+      'We diagnose your processes, uncover automation opportunities, and drive efficiency with the power of AI. Empower your business with cutting-edge AI, Business Intelligence, Data Solutions, and Web & Mobile Application Development solutions.',
     image1: HeroImg1,
     image2: HeroImg2,
   },
   {
     id: 2,
-    headline: 'Advanced Data Analytics',
+    headline: 'Empowering Your Business with Data-Driven Intelligence Solutions',
     description:
-      'Transform your data into actionable insights with state-of-the-art analytics that help you stay ahead in today’s competitive landscape.',
+      'We leverage the power of advanced BI solutions to unlock actionable insights and drive strategic growth. Streamline decision-making with tailored data analytics designed for your unique business needs.',
     image1: HeroImg2,
     image2: HeroImg1,
   },
   {
     id: 3,
-    headline: 'AI & BI Integration',
+    headline: 'Optimize your business through process automation.',
     description:
-      'Leverage AI-driven intelligence to streamline processes, predict outcomes, and gain a competitive edge with robust business intelligence solutions.',
+      'Transform your workflows with cutting-edge automation solutions designed for growth. We help you achieve efficiency, precision, and success.',
     image1: HeroImg1,
     image2: HeroImg2,
   },
-  {
-    id: 4,
-    headline: 'Custom Web & Mobile Solutions',
-    description:
-      'Reimagine user experiences with cutting-edge web and mobile app development tailored to your unique business needs and goals.',
-    image1: HeroImg2,
-    image2: HeroImg1,
-  },
+  // {
+  //   id: 4,
+  //   headline: 'Custom Web & Mobile Solutions',
+  //   description:
+  //     'Reimagine user experiences with cutting-edge web and mobile app development tailored to your unique business needs and goals.',
+  //   image1: HeroImg2,
+  //   image2: HeroImg1,
+  // },
 ];
 
 interface IHeroHeadlineProps {
