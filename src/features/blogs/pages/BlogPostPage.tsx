@@ -23,7 +23,11 @@ const BlogPostPage: React.FC = () => {
 
       {/* Cover Image */}
       <div className="mb-8 size-full rounded-lg bg-foreground/10 p-2">
-        <img alt="Blog Cover" className="size-full rounded-lg object-cover" src={blogPost.image} />
+        <img
+          alt="Blog Cover"
+          className="h-[36rem] w-full rounded-lg object-cover"
+          src={blogPost.image}
+        />
       </div>
 
       {/* Blog Content */}

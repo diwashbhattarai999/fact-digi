@@ -1,5 +1,11 @@
+import { Link } from 'react-router';
+
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
+import AyushNeupaneImg from '@/assets/team/ayush-neupane.jpg';
+import AyushPandeyImg from '@/assets/team/ayush-pandey.jpg';
+import DiwashBhattaraiImg from '@/assets/team/diwash-bhattarai.jpg';
+import SajalJoshiImg from '@/assets/team/sajal-joshi.jpg';
 import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
@@ -9,11 +15,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface TeamProps {
   imageUrl: string;
   name: string;
   position: string;
+  description: string;
   socialNetworks: Array<SocialNetworksProps>;
 }
 
@@ -24,70 +32,54 @@ interface SocialNetworksProps {
 
 const teamList: Array<TeamProps> = [
   {
-    imageUrl: 'https://i.pravatar.cc/150?img=35',
+    imageUrl: SajalJoshiImg,
     name: 'Sajal Joshi',
-    position: 'Product Manager',
+    position: 'Data Scientist',
+    description:
+      'Sajal is a highly skilled Data Scientist with expertise in AI-driven analytics and model development.',
     socialNetworks: [
       {
         name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/emma-smith/',
-      },
-      {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/emma.smith',
-      },
-      {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/emma.smith/',
+        url: 'https://www.linkedin.com/in/sajal-raj-joshi/',
       },
     ],
   },
   {
-    imageUrl: 'https://i.pravatar.cc/150?img=60',
+    imageUrl: AyushPandeyImg,
     name: 'Ayush Pandey',
-    position: 'Tech Lead',
+    position: 'Lead GenAI Data Scientist',
+    description:
+      'Ayush specializes in Generative AI, leading projects that integrate AI into real-world applications.',
     socialNetworks: [
       {
         name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/john-doe/',
-      },
-      {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/john.doe',
-      },
-      {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/john.doe/',
+        url: 'https://www.linkedin.com/in/iusshpandeh/',
       },
     ],
   },
   {
-    imageUrl: 'https://i.pravatar.cc/150?img=18',
+    imageUrl: AyushNeupaneImg,
     name: 'Ayush Neupane Khatri',
     position: 'Backend Developer',
+    description:
+      'Ayush is a talented backend developer with expertise in scalable system architecture and APIs.',
     socialNetworks: [
       {
         name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/ashley-ross/',
-      },
-      {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/ashley.ross/',
+        url: 'https://www.linkedin.com/in/ayush-neupane/',
       },
     ],
   },
   {
-    imageUrl: 'https://i.pravatar.cc/150?img=17',
+    imageUrl: DiwashBhattaraiImg,
     name: 'Diwash Bhattarai',
     position: 'Frontend Developer',
+    description:
+      'Diwash is a frontend developer passionate about building seamless and visually appealing web applications.',
     socialNetworks: [
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/bruce-rogers/',
-      },
-      {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/bruce.rogers',
       },
     ],
   },
@@ -119,7 +111,7 @@ export const Team = () => {
       </p>
 
       <div className="grid gap-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
-        {teamList.map(({ imageUrl, name, position, socialNetworks }: TeamProps) => (
+        {teamList.map(({ imageUrl, name, position, description, socialNetworks }: TeamProps) => (
           <Card
             key={name}
             className="relative mt-8 flex flex-col items-center justify-center bg-muted/50"
@@ -127,7 +119,7 @@ export const Team = () => {
             <CardHeader className="mt-8 flex items-center justify-center pb-2">
               <img
                 alt={`${name} ${position}`}
-                className="absolute -top-12 aspect-square h-24 w-24 rounded-full object-cover"
+                className="absolute -top-12 aspect-square h-24 w-24 rounded-full border object-cover"
                 src={imageUrl}
               />
               <CardTitle className="text-center">{name}</CardTitle>
@@ -137,27 +129,26 @@ export const Team = () => {
             </CardHeader>
 
             <CardContent className="pb-2 text-center text-sm">
-              <p>
-                {name} is a dedicated and skilled {position} with a passion for delivering
-                innovative solutions. Connect with {name} on social media!
-              </p>
+              <p>{description}</p>
             </CardContent>
 
             <CardFooter className="flex justify-center space-x-4">
               {socialNetworks.map(({ name, url }: SocialNetworksProps) => (
                 <div key={name}>
-                  <a
-                    href={url}
+                  <Link
                     rel="noreferrer noopener"
                     target="_blank"
-                    className={buttonVariants({
-                      variant: 'ghost',
-                      size: 'sm',
-                    })}
+                    to={url}
+                    className={cn(
+                      'rounded-full hover:bg-brand',
+                      buttonVariants({
+                        variant: 'ghost',
+                      })
+                    )}
                   >
                     <span className="sr-only">{name} icon</span>
                     {socialIcon(name)}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </CardFooter>

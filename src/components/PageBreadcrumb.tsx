@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 
+import { Home } from 'lucide-react';
+
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -27,7 +29,13 @@ export function PageBreadCrumb() {
         {/* Home Link */}
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link to="/">Home</Link>
+            <Link
+              className="flex items-center gap-2 rounded-full bg-brand/90 px-3 py-1 text-gray-100 hover:bg-brand hover:text-white"
+              to="/"
+            >
+              <Home size={16} />
+              Home
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -62,7 +70,7 @@ export function PageBreadCrumb() {
           return (
             <React.Fragment key={path}>
               <BreadcrumbSeparator />
-              <BreadcrumbItem>
+              <BreadcrumbItem className="capitalize">
                 {isLast ? (
                   <BreadcrumbPage>{decodeURIComponent(segment)}</BreadcrumbPage>
                 ) : (
