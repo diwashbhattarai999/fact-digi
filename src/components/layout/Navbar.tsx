@@ -10,7 +10,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 import Logo from '../Logo';
@@ -83,13 +83,13 @@ export const Navbar = () => {
       initial={{ y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        'fixed top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent backdrop-blur',
-        { 'bg-background/95': isScrolled }
+        'fixed top-0 z-40 w-full border border-b-[1px] border-border/20 bg-transparent backdrop-blur-md',
+        { 'bg-background/30': isScrolled }
       )}
     >
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container flex h-20 w-screen justify-between">
-          <NavigationMenuItem className="-ml-5 flex font-bold">
+          <NavigationMenuItem className="-ml-2 flex font-bold sm:-ml-5">
             <Logo />
           </NavigationMenuItem>
 
@@ -110,10 +110,10 @@ export const Navbar = () => {
               </SheetTrigger>
 
               <SheetContent side={'left'}>
-                <SheetHeader>
-                  <SheetTitle className="text-xl font-bold">Fact Digi</SheetTitle>
+                <SheetHeader className="items-start">
+                  <Logo imgClassName="size-14" />
                 </SheetHeader>
-                <nav className="mt-4 flex flex-col items-center justify-center gap-2">
+                <nav className="mt-4 flex flex-col items-start gap-2">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       key={label}
