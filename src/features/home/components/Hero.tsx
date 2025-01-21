@@ -65,13 +65,22 @@ const HeroHeadline = ({ headline }: IHeroHeadlineProps) => (
         Empower your business ⚡
       </HoverBorderGradient>
     </div>
-    <h1>
+    {/* <h1>
       <span className="inline bg-gradient-brand bg-clip-text text-transparent">Revolutionize</span>{' '}
       Your Business with
     </h1>
     <h2>
       <span className="inline bg-gradient-primary bg-clip-text text-transparent">{headline}</span>
-    </h2>
+    </h2> */}
+
+    <h1>
+      {headline.split(' ').map((word, index, arr) => (
+        <span key={index} className={`inline-block ${index >= arr.length - 2 ? 'text-brand' : ''}`}>
+          {word}
+          {index !== arr.length - 1 && <span className="ml-3" />}
+        </span>
+      ))}
+    </h1>
   </div>
 );
 
