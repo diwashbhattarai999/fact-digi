@@ -23,6 +23,8 @@ const carouselData = [
     description:
       'We diagnose your processes, uncover automation opportunities, and drive efficiency with the power of AI. Empower your business with cutting-edge AI, Business Intelligence, Data Solutions, and Web & Mobile Application Development solutions.',
     img: GenAiImg,
+    buttonLink: '/blog/gen-ai',
+    buttonText: 'Learn How GenAI Can Transform Your Business',
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ const carouselData = [
     description:
       'We leverage the power of advanced BI solutions to unlock actionable insights and drive strategic growth. Streamline decision-making with tailored data analytics designed for your unique business needs.',
     img: DataDrivenImg,
+    buttonLink: '/blog/data-driven',
+    buttonText: 'How Intelligent Data Solutions Can Transform Your Business',
   },
   {
     id: 3,
@@ -37,6 +41,8 @@ const carouselData = [
     description:
       'Transform your workflows with cutting-edge automation solutions designed for growth. We help you achieve efficiency, precision, and success.',
     img: ProcessAutomationImg,
+    buttonLink: '/blog/process-automation',
+    buttonText: 'Learn How Process Automation Optimizes Your Business',
   },
 ];
 
@@ -54,13 +60,6 @@ const HeroHeadline = ({ headline }: IHeroHeadlineProps) => (
         Empower your business ⚡
       </HoverBorderGradient>
     </div>
-    {/* <h1>
-      <span className="inline bg-gradient-brand bg-clip-text text-transparent">Revolutionize</span>{' '}
-      Your Business with
-    </h1>
-    <h2>
-      <span className="inline bg-gradient-primary bg-clip-text text-transparent">{headline}</span>
-    </h2> */}
 
     <h1>
       {headline.split(' ').map((word, index, arr) => (
@@ -83,15 +82,15 @@ const HeroDescription = ({ description }: IHeroDescriptionProps) => (
   </p>
 );
 
-const HeroActions = () => (
+const HeroActions = ({ buttonLink, buttonText }: { buttonLink: string; buttonText: string }) => (
   <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-normal">
     <a className="max-sm:w-full" href={'/#contact'}>
       <Button className="w-full">Get a Free Consultation</Button>
     </a>
 
-    <Link className="max-sm:w-full" to={'#'}>
+    <Link className="max-sm:w-full" to={buttonLink}>
       <Button className="w-full text-wrap max-sm:h-14" size={'lg'} variant={'outline'}>
-        Learn How GenAI Can Transform Your Business
+        {buttonText}
       </Button>
     </Link>
   </div>
@@ -119,12 +118,14 @@ export const Hero = () => {
                   <div className="flex w-full flex-col gap-8 text-center lg:text-start">
                     <HeroHeadline headline={carousel.headline} />
                     <HeroDescription description={carousel.description} />
-                    <HeroActions />
+                    <HeroActions
+                      buttonLink={carousel.buttonLink}
+                      buttonText={carousel.buttonText}
+                    />
                   </div>
 
                   {/* Image section */}
                   <div className="relative flex w-full items-center justify-center lg:w-1/2">
-                    {/* Image for larger screens */}
                     <img
                       alt="Hero Image"
                       className="hidden max-h-[500px] max-w-full object-contain md:max-h-[600px] lg:block lg:max-h-[700px]"

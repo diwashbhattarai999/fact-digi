@@ -28,7 +28,7 @@ const resourceLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-background via-brand-100/10 to-background" id="footer">
+    <footer id="footer">
       <hr className="w-full" />
 
       <section className="container flex flex-col items-start justify-between gap-x-20 gap-y-10 py-20 xl:flex-row">
