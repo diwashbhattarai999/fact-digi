@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useParams } from 'react-router';
 
-import { blogPosts, TBlogPostSlug } from '@/lib/blog-posts';
+import { blogPosts, TBlogPostSlug } from '@/data/blog-posts';
 
 import BlogNotFound from '../components/BlogNotFound';
 

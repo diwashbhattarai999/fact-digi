@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { blogPosts } from '@/lib/blog-posts';
+import { blogPosts } from '@/data/blog-posts';
 
 const BlogList = () => {
   return (

@@ -34,7 +34,7 @@ export const blogPosts = {
    - Lower Labor Costs: Automating routine tasks allows employees to focus on higher-value activities.
    - Reduced Errors: Minimizing human error in processes like data entry or customer service improves overall efficiency.
 
-**Conclusion**
+### **Conclusion**
 Generative AI is not just a tool; it’s a catalyst for transformation. By embracing this technology, businesses can innovate, optimize operations, and deliver exceptional value to customers.`,
     image: GenAiImg,
   },
@@ -68,7 +68,8 @@ Generative AI is not just a tool; it’s a catalyst for transformation. By embra
    - Lower Operational Costs: Reduce waste and inefficiencies across departments.
    - Maximize Investments: Ensure every dollar spent yields measurable results through data-backed strategies.
 
-**Conclusion**
+### **Conclusion**
+
 Intelligent Data Solutions are not just a technological advancement; they are a transformative force that can redefine how businesses operate, innovate, and grow. In an increasingly data-driven world, the question isn’t whether to adopt Intelligent Data Solutions, but how soon you can start.`,
     image: DatSolutionsImg,
   },
@@ -106,7 +107,7 @@ Intelligent Data Solutions are not just a technological advancement; they are a 
    - Minimize resource wastage by automating routine processes.
    - Reduce dependency on manual labor, allowing employees to focus on strategic initiatives.
 
-**Conclusion**  
+### **Conclusion**  
 Process automation is not just about replacing manual tasks; it’s about creating a smarter, more agile business. Companies that adopt automation will see increased efficiency, improved customer satisfaction, and a significant boost in profitability.`,
     image: ProcessAutomationImg,
   },
