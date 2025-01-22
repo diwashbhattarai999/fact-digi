@@ -134,7 +134,7 @@ export const Hero = () => {
                   </div>
 
                   {/* Mobile Image Background */}
-                  <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-5 lg:hidden">
+                  <div className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-5 lg:hidden">
                     <img
                       alt="Hero Image"
                       className="h-full w-full object-contain"

@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart, Database, Smartphone, Workflow } from 'lucide-react';
+import { ArrowRight, BarChart, Database, Workflow } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,29 +28,29 @@ const serviceList: Array<ServiceProps> = [
       'Leverage AI and BI technologies to enhance your business intelligence, improve analytics, and drive smarter decisions.',
     icon: <BarChart className="size-6 text-brand dark:text-brand-100" />,
   },
-  {
-    title: 'Web/Mobile Apps',
-    description:
-      'Get custom-built web and mobile applications designed to provide seamless user experiences and drive business success.',
-    icon: <Smartphone className="size-6 text-brand dark:text-brand-100" />,
-  },
+  // {
+  //   title: 'Web/Mobile Apps',
+  //   description:
+  //     'Get custom-built web and mobile applications designed to provide seamless user experiences and drive business success.',
+  //   icon: <Smartphone className="size-6 text-brand dark:text-brand-100" />,
+  // },
 ];
 
 export const Services = () => {
   return (
     <section className="container py-16" id="services">
-      <div className="flex w-full flex-col">
+      <div className="flex w-full flex-col items-center">
         <h2 className="text-3xl font-bold md:text-4xl">
           Your <span className="text-gradient">AI Journey Starts Here</span>
         </h2>
 
-        <p className="mb-8 mt-4 text-xl text-muted-foreground">
+        <p className="mb-8 mt-2 max-w-4xl text-center text-lg text-muted-foreground">
           Empower your business with tailored AI solutions that drive efficiency, innovation, and
           continuous growth.
         </p>
 
         {/* Service List */}
-        <div className="grid w-full gap-8 md:grid-cols-2">
+        <div className="grid w-full gap-8 md:grid-cols-3">
           {serviceList.map(({ icon, title, description }: ServiceProps) => (
             <Card key={title} className="border bg-muted/50 shadow-sm">
               <CardHeader className="flex items-start justify-start gap-4 space-y-1 md:flex-row">

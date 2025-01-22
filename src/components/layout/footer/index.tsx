@@ -21,7 +21,7 @@ const companyLinks = [
 ];
 
 const resourceLinks = [
-  { href: '#', label: 'Blog' },
+  { href: '/blog', label: 'Blog' },
   { href: '#', label: 'Documentation' },
   { href: '#', label: 'Case Studies' },
 ];

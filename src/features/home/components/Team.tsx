@@ -79,7 +79,7 @@ const teamList: Array<TeamProps> = [
     socialNetworks: [
       {
         name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/bruce-rogers/',
+        url: 'https://www.linkedin.com/in/diwashb999/',
       },
     ],
   },

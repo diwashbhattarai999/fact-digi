@@ -16,7 +16,7 @@ const BlogPostPage: React.FC = () => {
   return (
     <div className="mt-10">
       {/* Title and Meta Information */}
-      <h1 className="mb-4 text-4xl font-bold leading-tight">{blogPost.title}</h1>
+      <h1 className="mb-4 text-2xl font-bold leading-tight md:text-4xl">{blogPost.title}</h1>
       <p className="mb-4 text-sm text-muted-foreground">
         By <span className="font-semibold">{blogPost.author}</span> • {blogPost.date}
       </p>
@@ -25,13 +25,13 @@ const BlogPostPage: React.FC = () => {
       <div className="mb-8 size-full rounded-lg bg-foreground/10 p-2">
         <img
           alt="Blog Cover"
-          className="h-[36rem] w-full rounded-lg object-cover"
+          className="w-full rounded-lg object-contain md:h-[36rem] md:object-cover"
           src={blogPost.image}
         />
       </div>
 
       {/* Blog Content */}
-      <article className="prose prose-lg prose-gray max-w-none">
+      <article className="prose prose-gray max-w-none md:prose-lg">
         <ReactMarkdown>{blogPost.content}</ReactMarkdown>
       </article>
     </div>
