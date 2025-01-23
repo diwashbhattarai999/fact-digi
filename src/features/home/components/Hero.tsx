@@ -51,7 +51,7 @@ interface IHeroHeadlineProps {
 }
 
 const HeroHeadline = ({ headline }: IHeroHeadlineProps) => (
-  <div className="text-3xl font-bold sm:text-4xl md:text-5xl lg:max-w-xl lg:text-6xl xl:max-w-3xl">
+  <div className="text-4xl font-bold sm:text-5xl lg:max-w-xl lg:text-5xl xl:max-w-3xl xl:text-6xl">
     <div className="flex w-full items-center justify-center lg:justify-start">
       <HoverBorderGradient
         className="w-fit cursor-auto rounded-full px-3 py-0.5 text-xs text-brand-50/90 dark:text-primary"
@@ -77,7 +77,7 @@ interface IHeroDescriptionProps {
 }
 
 const HeroDescription = ({ description }: IHeroDescriptionProps) => (
-  <p className="mx-auto max-w-lg text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0">
+  <p className="mx-auto max-w-2xl text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0">
     {description}
   </p>
 );
@@ -114,7 +114,7 @@ export const Hero = () => {
           {carouselData.map((carousel, index) => (
             <CarouselItem key={index}>
               <BackgroundBeamsWithCollision>
-                <section className="container relative z-10 flex flex-col justify-center pt-20 md:gap-10 md:pt-10 lg:flex-row">
+                <section className="max-container relative z-10 flex flex-1 flex-col pt-0 md:justify-between md:gap-10 md:pt-10 lg:flex-row">
                   <div className="flex w-full flex-col gap-8 text-center lg:text-start">
                     <HeroHeadline headline={carousel.headline} />
                     <HeroDescription description={carousel.description} />
@@ -128,7 +128,7 @@ export const Hero = () => {
                   <div className="relative flex w-full items-center justify-center lg:w-1/2">
                     <img
                       alt="Hero Image"
-                      className="hidden max-h-[500px] max-w-full object-contain md:max-h-[600px] lg:block lg:max-h-[700px]"
+                      className="hidden size-[28rem] object-contain lg:block"
                       src={carousel.img}
                     />
                   </div>

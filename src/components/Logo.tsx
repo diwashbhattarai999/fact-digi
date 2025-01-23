@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import { cn } from '@/lib/utils';
 
 interface ILogoProps {
@@ -8,9 +10,9 @@ interface ILogoProps {
 
 const Logo = ({ className, imgClassName, textClassName }: ILogoProps) => {
   return (
-    <a
+    <Link
       className={cn('-ml-2 flex items-center justify-center text-2xl font-bold', className)}
-      href="/#home"
+      to="/#home"
     >
       <img
         alt="Fact Digi Logo"
@@ -18,7 +20,7 @@ const Logo = ({ className, imgClassName, textClassName }: ILogoProps) => {
         src="/logo.png"
       />
       <p className={cn('-ml-1', textClassName)}>Fact Digi</p>
-    </a>
+    </Link>
   );
 };
 

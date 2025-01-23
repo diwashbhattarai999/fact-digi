@@ -57,7 +57,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="container py-20 xl:py-32" id="contact">
+    <section className="max-container py-20 xl:py-32" id="contact">
       <div className="flex items-center gap-16">
         <div className="w-full md:w-1/2">
           <h2 className="mb-2 text-4xl font-semibold">

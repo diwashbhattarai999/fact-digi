@@ -46,11 +46,13 @@ import {
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
-      <Hero />
+      <div className="bg-gradient-to-b from-brand/10 to-background">
+        {/* Hero Section */}
+        <Hero />
 
-      {/* Services Section */}
-      <Services />
+        {/* Services Section */}
+        <Services />
+      </div>
 
       {/* Benefits Section */}
       <Benefits />

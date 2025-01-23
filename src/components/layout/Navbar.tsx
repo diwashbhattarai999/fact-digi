@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
@@ -21,10 +22,6 @@ interface RouteProps {
 }
 
 const routeList: Array<RouteProps> = [
-  {
-    href: '/#services',
-    label: 'Services',
-  },
   {
     href: '/#benefits',
     label: 'Benefits',
@@ -92,7 +89,7 @@ export const Navbar = () => {
       )}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container flex h-20 w-screen justify-between">
+        <NavigationMenuList className="max-container flex h-20 w-screen justify-between">
           <NavigationMenuItem className="-ml-2 flex font-bold sm:-ml-5">
             <Logo />
           </NavigationMenuItem>
@@ -119,17 +116,17 @@ export const Navbar = () => {
                 </SheetHeader>
                 <nav className="mt-4 flex flex-col items-start gap-2">
                   {routeList.map(({ href, label }: RouteProps) => (
-                    <a
+                    <Link
                       key={label}
                       className={buttonVariants({ variant: 'ghost' })}
-                      href={href}
                       rel="noreferrer noopener"
+                      to={href}
                       onClick={() => {
                         setIsOpen(false);
                       }}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </SheetContent>
@@ -139,16 +136,16 @@ export const Navbar = () => {
           {/* desktop */}
           <nav className="hidden gap-2 md:flex">
             {routeList.map((route: RouteProps, i) => (
-              <a
+              <Link
                 key={i}
-                href={route.href}
                 rel="noreferrer noopener"
+                to={route.href}
                 className={`text-[17px] ${buttonVariants({
                   variant: 'ghost',
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

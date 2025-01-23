@@ -1,7 +1,7 @@
 import { ArrowRight, BarChart, Database, Workflow } from 'lucide-react';
 
+import { SectionSubtitle, SectionWrapper } from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ServiceProps {
   title: string;
@@ -14,68 +14,63 @@ const serviceList: Array<ServiceProps> = [
     title: 'GenAI Consulting for Process Automation',
     description:
       'Optimize your business processes with our expert GenAI consulting services, focused on identifying and automating workflows.',
-    icon: <Workflow className="size-6 text-brand dark:text-brand-100" />,
+    icon: <Workflow className="size-6 text-brand" />,
   },
   {
     title: 'Data Solutions Provider',
     description:
       'Harness the power of data with our tailored data solutions, enabling better decision-making and business insights.',
-    icon: <Database className="size-6 text-brand dark:text-brand-100" />,
+    icon: <Database className="size-6 text-brand" />,
   },
   {
     title: 'AI/BI Solutions',
     description:
       'Leverage AI and BI technologies to enhance your business intelligence, improve analytics, and drive smarter decisions.',
-    icon: <BarChart className="size-6 text-brand dark:text-brand-100" />,
+    icon: <BarChart className="size-6 text-brand" />,
   },
-  // {
-  //   title: 'Web/Mobile Apps',
-  //   description:
-  //     'Get custom-built web and mobile applications designed to provide seamless user experiences and drive business success.',
-  //   icon: <Smartphone className="size-6 text-brand dark:text-brand-100" />,
-  // },
 ];
 
 export const Services = () => {
   return (
-    <section className="container py-16" id="services">
-      <div className="flex w-full flex-col items-center">
-        <h2 className="text-3xl font-bold md:text-4xl">
-          Your <span className="text-gradient">AI Journey Starts Here</span>
-        </h2>
+    <SectionWrapper id="services">
+      <div className="relative flex w-full flex-col space-y-10 overflow-hidden rounded-2xl border bg-background p-8 shadow-xl md:p-12">
+        <div>
+          <div className="pattern-dots absolute left-0 top-0 size-full pattern-blue-500 pattern-bg-background pattern-opacity-5 pattern-size-6" />
+          <SectionSubtitle>AI Solutions</SectionSubtitle>
 
-        <p className="mb-8 mt-2 max-w-4xl text-center text-lg text-muted-foreground">
-          Empower your business with tailored AI solutions that drive efficiency, innovation, and
-          continuous growth.
-        </p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            Your <span className="text-gradient">AI Journey Starts Here</span>
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-muted-foreground">
+            Empower your business with tailored AI solutions that drive efficiency, innovation, and
+            continuous growth.
+          </p>
+        </div>
 
         {/* Service List */}
-        <div className="grid w-full gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {serviceList.map(({ icon, title, description }: ServiceProps) => (
-            <Card key={title} className="border bg-muted/50 shadow-sm">
-              <CardHeader className="flex items-start justify-start gap-4 space-y-1 md:flex-row">
+            <div key={title}>
+              <div className="flex flex-col items-start justify-start gap-4 space-y-1">
                 <div className="mt-1 rounded-full bg-brand/20 p-2">{icon}</div>
                 <div>
-                  <CardTitle className="text-brand dark:text-brand-100">{title}</CardTitle>
-                  <CardDescription className="text-md mt-2 text-muted-foreground">
-                    {description}
-                  </CardDescription>
+                  <h3 className="text-brand dark:text-brand-100">{title}</h3>
+                  <p className="text-md mt-2 text-muted-foreground">{description}</p>
                 </div>
-              </CardHeader>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <div className="mt-12 text-center">
-          <Button className="w-64 rounded-full">
-            <a className="flex items-center justify-center gap-2" href={'#how-it-works'}>
-              Discover How We Work
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
-        </div>
+        <Button className="z-0 w-64 rounded-full">
+          <a className="flex items-center justify-center gap-2" href={'#how-it-works'}>
+            Discover How We Work
+            <ArrowRight className="size-4" />
+          </a>
+        </Button>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

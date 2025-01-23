@@ -45,7 +45,7 @@ const BENIFITS_BADGES: Array<string> = [
 
 export const Benefits = () => {
   return (
-    <section className="container space-y-8 py-24 sm:py-32" id="benefits">
+    <section className="max-container space-y-8 py-24 sm:py-32" id="benefits">
       {/* Main Title */}
       <h2 className="text-center text-xl font-bold md:text-3xl lg:text-4xl">
         Why Choose <span className="text-gradient">Fact Digi</span> ?

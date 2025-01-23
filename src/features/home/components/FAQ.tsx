@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/PageItems';
 import {
   Accordion,
   AccordionContent,
@@ -46,7 +47,7 @@ const FAQList: Array<FAQProps> = [
 
 export const FAQ = () => {
   return (
-    <section className="container py-24 sm:py-28" id="faq">
+    <SectionWrapper className="w-full" id="faq">
       <h2 className="mb-4 text-3xl font-bold md:text-4xl">
         Frequently Asked <span className="text-gradient">Questions</span>
       </h2>
@@ -60,17 +61,6 @@ export const FAQ = () => {
           </AccordionItem>
         ))}
       </Accordion>
-
-      <h3 className="mt-4 font-medium">
-        Still have questions?{' '}
-        <a
-          className="border-brand text-brand transition-all hover:border-b-2 dark:border-brand-100 dark:text-brand-100"
-          href="#"
-          rel="noreferrer noopener"
-        >
-          Contact us
-        </a>
-      </h3>
-    </section>
+    </SectionWrapper>
   );
 };

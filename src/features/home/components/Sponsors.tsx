@@ -1,5 +1,7 @@
 import { Award, BarChart2, Briefcase, Globe, Radar } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/PageItems';
+
 interface SponsorProps {
   icon: JSX.Element;
   name: string;
@@ -49,30 +51,29 @@ const sponsors: Array<SponsorProps> = [
   },
 ];
 
-const SponsorCard = ({ icon, name, description }: SponsorProps) => (
-  <div className="flex flex-col items-center gap-2 text-center">
-    <span className="text-brand dark:text-brand-100">{icon}</span>
+const SponsorCard = ({ icon, name }: SponsorProps) => (
+  <div className="flex items-center justify-center gap-2 text-center">
+    <span className="rounded-full bg-brand/10 p-2 text-brand dark:text-brand-100">{icon}</span>
     <h3 className="text-lg font-semibold">{name}</h3>
-    {description && <p className="text-sm text-muted-foreground">{description}</p>}
   </div>
 );
 
 export const Sponsors = () => {
   return (
-    <section className="container py-24 sm:py-32" id="sponsors">
-      <h2 className="text-gradient mb-8 text-center text-2xl font-bold lg:text-3xl">
-        Trusted by Industry Leaders
+    <SectionWrapper id="sponsors">
+      <h2 className="mb-4 text-center text-2xl font-bold lg:text-3xl">
+        Trusted by
+        <span className="text-gradient"> Industry Leaders</span>
       </h2>
       <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
-        Fact-Digi collaborates with top innovators and investors to deliver cutting-edge solutions
-        in Business Intelligence, Artificial Intelligence, and Data Analytics. Together, we’re
-        shaping the future of digital transformation.
+        At Fact Digi, we collaborate with some of the most forward-thinking companies in the
+        industry to drive innovation and excellence.
       </p>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      <div className="flex flex-wrap items-center justify-center gap-8">
         {sponsors.map((sponsor) => (
           <SponsorCard key={sponsor.name} {...sponsor} />
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

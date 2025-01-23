@@ -3,7 +3,7 @@ import { Statistics } from '@/components/Statistics';
 
 export const About = () => {
   return (
-    <section className="container py-24 sm:py-32" id="about">
+    <section className="max-container py-24 sm:py-32" id="about">
       <div className="rounded-lg border bg-muted/50 py-12">
         <div className="flex flex-col-reverse gap-8 px-6 md:flex-row md:gap-12">
           <img

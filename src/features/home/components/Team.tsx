@@ -100,10 +100,9 @@ export const Team = () => {
   };
 
   return (
-    <section className="container py-24 sm:py-32" id="team">
+    <section className="max-container py-24 sm:py-32" id="team">
       <h2 className="text-center text-3xl font-bold md:text-4xl">
-        <span className="text-gradient">Our Dedicated </span>
-        Crew
+        Our <span className="text-gradient">Dedicated Crew</span>
       </h2>
 
       <p className="mb-10 mt-4 text-center text-xl text-muted-foreground">

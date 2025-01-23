@@ -68,6 +68,7 @@
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-bg-patterns": "^0.3.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
