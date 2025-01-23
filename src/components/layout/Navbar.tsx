@@ -119,9 +119,17 @@ export const Navbar = () => {
                     <Link
                       key={label}
                       className={buttonVariants({ variant: 'ghost' })}
-                      rel="noreferrer noopener"
                       to={href}
-                      onClick={() => {
+                      onClick={(e) => {
+                        if (href.startsWith('/#')) {
+                          e.preventDefault(); // Prevent default navigation
+                          const targetId = href.replace('/#', ''); // Extract the section ID
+                          const targetElement = document.getElementById(targetId);
+
+                          if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }
                         setIsOpen(false);
                       }}
                     >
@@ -138,11 +146,22 @@ export const Navbar = () => {
             {routeList.map((route: RouteProps, i) => (
               <Link
                 key={i}
-                rel="noreferrer noopener"
+                // rel="noreferrer noopener"
                 to={route.href}
                 className={`text-[17px] ${buttonVariants({
                   variant: 'ghost',
                 })}`}
+                onClick={(e) => {
+                  if (route.href.startsWith('/#')) {
+                    e.preventDefault(); // Prevent default navigation
+                    const targetId = route.href.replace('/#', ''); // Extract the section ID
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                      targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
               >
                 {route.label}
               </Link>

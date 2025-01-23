@@ -36,7 +36,7 @@ const config: Config = {
       padding: {
         DEFAULT: '1rem',
         sm: '1.5rem',
-        md: '2rem',
+        md: '2.5rem',
         xl: '4rem',
       },
       screens: {

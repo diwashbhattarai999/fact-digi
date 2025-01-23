@@ -86,6 +86,6 @@
   }
 
   .max-container {
-    @apply max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 2xl:px-0;
+    @apply mx-auto max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-16 2xl:px-0;
   }
 }

@@ -13,7 +13,7 @@ const Cta = () => {
             <span className="text-gradient"> Ideas & Concepts </span>
             In One Interface
           </h2>
-          <p className="mb-8 mt-4 text-muted-foreground sm:text-xl lg:mb-0">
+          <p className="mb-8 mt-4 text-muted-foreground lg:mb-0">
             Seamlessly integrate all your ideas into one platform. Experience efficiency and clarity
             like never before, all with a user-friendly interface.
           </p>
