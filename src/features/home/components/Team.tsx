@@ -2,10 +2,20 @@ import { Link } from 'react-router';
 
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
+import AnishSthapitImg from '@/assets/team/anish-sthapit.jpg';
+import AnujLohalaImg from '@/assets/team/anuj-lohala.jpg';
 import AyushNeupaneImg from '@/assets/team/ayush-neupane.jpg';
 import AyushPandeyImg from '@/assets/team/ayush-pandey.jpg';
 import DiwashBhattaraiImg from '@/assets/team/diwash-bhattarai.jpg';
+import LaxmiBhandariImg from '@/assets/team/laxmi-bhandari.jpg';
 import SajalJoshiImg from '@/assets/team/sajal-joshi.jpg';
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
@@ -34,9 +44,9 @@ const teamList: Array<TeamProps> = [
   {
     imageUrl: SajalJoshiImg,
     name: 'Sajal Joshi',
-    position: 'Data Scientist',
+    position: 'CEO',
     description:
-      'Sajal is a highly skilled Data Scientist with expertise in AI-driven analytics and model development.',
+      'Sajal leads the team with expertise in AI-driven analytics and model development.',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -47,9 +57,9 @@ const teamList: Array<TeamProps> = [
   {
     imageUrl: AyushPandeyImg,
     name: 'Ayush Pandey',
-    position: 'Lead GenAI Data Scientist',
+    position: 'Tech Lead',
     description:
-      'Ayush specializes in Generative AI, leading projects that integrate AI into real-world applications.',
+      'Ayush specializes in Generative AI, leading AI integration and automation projects.',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -58,11 +68,48 @@ const teamList: Array<TeamProps> = [
     ],
   },
   {
+    imageUrl: LaxmiBhandariImg,
+    name: 'Laxmi Bhandari',
+    position: 'Creative & Marketing Head',
+    description: 'Laxmi brings 7+ years of experience in branding, marketing, and campaign design.',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/laxmi-bhandari-8b1a462a4/',
+      },
+    ],
+  },
+  {
+    imageUrl: AnishSthapitImg,
+    name: 'Anish Sthapit',
+    position: 'Analytics Head',
+    description:
+      'Anish is an expert in data visualization, optimizing workflows across industries.',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/anishsthapit/',
+      },
+    ],
+  },
+  {
+    imageUrl: AnujLohalaImg,
+    name: 'Anuj Lohala',
+    position: 'BI Lead',
+    description:
+      'Anuj specializes in Power BI, DAX, and dashboard creation for data-driven decision-making.',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/anuj-lohala-1514311a0/',
+      },
+    ],
+  },
+  {
     imageUrl: AyushNeupaneImg,
     name: 'Ayush Neupane Khatri',
     position: 'Backend Developer',
-    description:
-      'Ayush is a talented backend developer with expertise in scalable system architecture and APIs.',
+    description: 'Ayush focuses on building scalable backend systems and APIs.',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -74,8 +121,7 @@ const teamList: Array<TeamProps> = [
     imageUrl: DiwashBhattaraiImg,
     name: 'Diwash Bhattarai',
     position: 'Frontend Developer',
-    description:
-      'Diwash is a frontend developer passionate about building seamless and visually appealing web applications.',
+    description: 'Diwash specializes in creating seamless and visually appealing user experiences.',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -100,16 +146,19 @@ export const Team = () => {
   };
 
   return (
-    <section className="max-container py-24 sm:py-32" id="team">
-      <h2 className="text-center text-3xl font-bold md:text-4xl">
-        Our <span className="text-gradient">Dedicated Crew</span>
-      </h2>
+    <SectionWrapper className="space-y-16" id="team">
+      <div>
+        <SectionSubtitle>Meet the Team</SectionSubtitle>
+        <SectionTitle>
+          Our <GradientText>Dedicated Crew</GradientText>
+        </SectionTitle>
 
-      <p className="mb-10 mt-4 text-center text-xl text-muted-foreground">
-        Meet the talented individuals who are passionate about driving our vision forward.
-      </p>
+        <SectionDescription>
+          Meet the talented individuals who are passionate about driving our vision forward.
+        </SectionDescription>
+      </div>
 
-      <div className="grid gap-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {teamList.map(({ imageUrl, name, position, description, socialNetworks }: TeamProps) => (
           <Card
             key={name}
@@ -154,6 +203,6 @@ export const Team = () => {
           </Card>
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

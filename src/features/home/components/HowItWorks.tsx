@@ -3,7 +3,6 @@ import { Cpu, Monitor, MoveDown, Rocket, Target } from 'lucide-react';
 import { SectionSubtitle } from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 
 const steps = [
   {
@@ -68,40 +67,6 @@ export const HowItWorks = () => {
                 {description}
               </CardDescription>
             </Card>
-
-            {/* Responsive Custom Curved Arrow */}
-            {index < steps.length - 1 && (
-              <svg
-                fill="none"
-                height="30"
-                viewBox="0 0 50 30"
-                width="50"
-                xmlns="http://www.w3.org/2000/svg"
-                className={cn(
-                  'absolute -right-12 top-1/2 hidden -translate-y-1/2 text-brand sm:block',
-                  {
-                    'sm:-bottom-14 sm:right-1/2 sm:top-auto sm:rotate-90 xl:-right-12 xl:bottom-auto xl:top-1/2 xl:block xl:rotate-0':
-                      index === 1,
-                    'sm:rotate-180 xl:rotate-0': index === 2,
-                  }
-                )}
-              >
-                <path
-                  d="M5 25 C20 10, 30 10, 45 25"
-                  fill="transparent"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M40 25 L45 25 L42 20"
-                  fill="transparent"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                />
-              </svg>
-            )}
 
             {index < steps.length - 1 && (
               <MoveDown

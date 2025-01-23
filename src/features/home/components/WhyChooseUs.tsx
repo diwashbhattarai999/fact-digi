@@ -1,5 +1,12 @@
 import { BarChart, Cpu, DollarSign, TrendingUp } from 'lucide-react';
 
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -43,22 +50,23 @@ const BENIFITS_BADGES: Array<string> = [
   'Optimization',
 ];
 
-export const Benefits = () => {
+export const WhyChooseUs = () => {
   return (
-    <section className="max-container space-y-8 py-24 sm:py-32" id="benefits">
-      {/* Main Title */}
-      <h2 className="text-center text-xl font-bold md:text-3xl lg:text-4xl">
-        Why Choose <span className="text-gradient">Fact Digi</span> ?
-      </h2>
+    <SectionWrapper className="space-y-10" id="benefits">
+      <div>
+        <SectionSubtitle>Why choose us</SectionSubtitle>
+        <SectionTitle>
+          Why Choose <GradientText>Fact Digi</GradientText> ?
+        </SectionTitle>
 
-      {/* Subtitle */}
-      <p className="mx-auto text-center text-muted-foreground md:w-3/4 md:text-lg">
-        Generative AI is transforming businesses by enhancing efficiency, reducing costs, and
-        providing data-driven insights.
-      </p>
+        <SectionDescription>
+          Generative AI is transforming businesses by enhancing efficiency, reducing costs, and
+          providing data-driven insights.
+        </SectionDescription>
+      </div>
 
       {/* Benifits Badges */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap gap-4">
         {BENIFITS_BADGES.map((benifit: string) => (
           <Badge key={benifit} className="text-sm" variant="secondary">
             {benifit}
@@ -87,7 +95,7 @@ export const Benefits = () => {
       </div>
 
       {/* Add Industry Quote */}
-      <div className="mt-10 text-center">
+      {/* <div className="mt-10 text-center">
         <blockquote className="text-lg italic text-muted-foreground">
           "Fact Digi's AI solutions have revolutionized our business operations and transformed the
           way we approach data analytics."
@@ -95,7 +103,7 @@ export const Benefits = () => {
             - John Doe, CEO at Acme Inc.
           </footer>
         </blockquote>
-      </div>
-    </section>
+      </div> */}
+    </SectionWrapper>
   );
 };

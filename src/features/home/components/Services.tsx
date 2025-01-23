@@ -1,6 +1,12 @@
 import { ArrowRight, BarChart, Database, Workflow } from 'lucide-react';
 
-import { SectionSubtitle, SectionWrapper } from '@/components/PageItems';
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
 
 interface ServiceProps {
@@ -38,14 +44,14 @@ export const Services = () => {
           <div className="pattern-dots absolute left-0 top-0 size-full pattern-blue-500 pattern-bg-background pattern-opacity-5 pattern-size-6" />
           <SectionSubtitle>AI Solutions</SectionSubtitle>
 
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Your <span className="text-gradient">AI Journey Starts Here</span>
-          </h2>
+          <SectionTitle>
+            Your <GradientText>AI Journey Starts Here</GradientText>
+          </SectionTitle>
 
-          <p className="mt-4 max-w-2xl text-muted-foreground">
+          <SectionDescription>
             Empower your business with tailored AI solutions that drive efficiency, innovation, and
             continuous growth.
-          </p>
+          </SectionDescription>
         </div>
 
         {/* Service List */}

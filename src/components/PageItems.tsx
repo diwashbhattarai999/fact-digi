@@ -10,7 +10,7 @@ export const SectionWrapper = ({
   className?: string;
 }) => {
   return (
-    <section className={cn('max-container relative pb-16', className)} id={id}>
+    <section className={cn('max-container relative w-full py-16', className)} id={id}>
       {children}
     </section>
   );
@@ -40,8 +40,20 @@ export const SectionTitle = ({
   className?: string;
 }) => {
   return (
-    <h2 className={cn('text-gradient text-center text-3xl font-bold', className)}>{children}</h2>
+    <h2 className={cn('mt-4 text-3xl font-bold tracking-tight sm:text-4xl', className)}>
+      {children}
+    </h2>
   );
+};
+
+export const GradientText = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <span className={cn('text-gradient', className)}>{children}</span>;
 };
 
 export const SectionSubtitle = ({
@@ -61,4 +73,14 @@ export const SectionSubtitle = ({
       {children}
     </span>
   );
+};
+
+export const SectionDescription = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <p className={cn('mt-4 max-w-2xl text-muted-foreground', className)}>{children}</p>;
 };

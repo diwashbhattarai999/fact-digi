@@ -5,6 +5,13 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 import ContactImage from '@/assets/contact-us/contact-us.svg';
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -57,17 +64,22 @@ export const Contact = () => {
   };
 
   return (
-    <section className="max-container py-20 xl:py-32" id="contact">
-      <div className="flex items-center gap-16">
-        <div className="w-full md:w-1/2">
-          <h2 className="mb-2 text-4xl font-semibold">
-            Contact Us <span className="text-gradient">Today</span>
-          </h2>
-          <p className="mb-10 text-gray-600 dark:text-gray-400">
-            Fill out the form below and we’ll get back to you as soon as possible.
-          </p>
+    <SectionWrapper id="contact">
+      <div className="flex w-full flex-col items-center justify-start gap-16 lg:flex-row">
+        {/* Left Form Section */}
+        <div className="w-full space-y-16 lg:flex-1">
+          <div>
+            <SectionSubtitle>Get in Touch with Us</SectionSubtitle>
+            <SectionTitle>
+              Contact Us <GradientText>Today</GradientText>
+            </SectionTitle>
+            <SectionDescription>
+              Fill out the form below and we’ll get back to you as soon as possible.
+            </SectionDescription>
+          </div>
+
           <form className="mx-auto flex max-w-4xl flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid w-full gap-6 md:grid-cols-2">
+            <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <div className="space-y-1">
                 <Label htmlFor="name">
                   Full Name<span className="text-red-500">*</span>
@@ -86,7 +98,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="grid w-full gap-6 md:grid-cols-2">
+            <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <div className="space-y-1">
                 <Label htmlFor="email">
                   Phone Number<span className="text-red-500">*</span>
@@ -129,12 +141,11 @@ export const Contact = () => {
             </Button>
           </form>
         </div>
-
         {/* Image Section */}
-        <div className="hidden w-full md:block md:w-1/2">
+        <div className="hidden w-1/2 lg:block">
           <img alt="Contact Illustration" className="w-full rounded-lg" src={ContactImage} />
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

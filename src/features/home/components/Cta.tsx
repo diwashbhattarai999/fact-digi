@@ -20,9 +20,9 @@ const Cta = () => {
         </div>
 
         {/* Right Section: Call to Action Buttons */}
-        <div className="space-y-4 lg:col-span-1">
-          <Button className="w-full md:mr-4 md:w-auto">Request a Demo</Button>
-          <Button className="w-full md:w-auto" variant="outline">
+        <div className="flex items-center justify-center gap-4 lg:flex-col">
+          <Button className="w-full">Request a Demo</Button>
+          <Button className="w-full" variant="outline">
             View all features
           </Button>
         </div>

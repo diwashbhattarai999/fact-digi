@@ -1,4 +1,10 @@
-import { SectionWrapper } from '@/components/PageItems';
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import {
   Accordion,
   AccordionContent,
@@ -47,10 +53,17 @@ const FAQList: Array<FAQProps> = [
 
 export const FAQ = () => {
   return (
-    <SectionWrapper className="w-full" id="faq">
-      <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-        Frequently Asked <span className="text-gradient">Questions</span>
-      </h2>
+    <SectionWrapper className="space-y-10" id="faq">
+      <div>
+        <SectionSubtitle>Get to Know Us Better</SectionSubtitle>
+        <SectionTitle>
+          Frequently Asked <GradientText>Questions</GradientText>
+        </SectionTitle>
+        <SectionDescription>
+          Have questions about our services, AI solutions, or development process? Check out our FAQ
+          section to learn more.
+        </SectionDescription>
+      </div>
 
       <Accordion collapsible className="AccordionRoot w-full" type="single">
         {FAQList.map(({ question, answer, value }: FAQProps) => (
