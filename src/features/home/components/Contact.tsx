@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
@@ -72,7 +73,11 @@ export const Contact = () => {
       <div className="flex w-full flex-col items-center justify-start gap-16 lg:flex-row">
         {/* Left Form Section */}
         <div className="w-full space-y-16 lg:flex-1">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
             <SectionSubtitle>Get in Touch with Us</SectionSubtitle>
             <SectionTitle>
               Contact Us <GradientText>Today</GradientText>
@@ -88,18 +93,35 @@ export const Contact = () => {
               </a>
               .
             </SectionDescription>
-          </div>
+          </motion.div>
 
-          <form className="mx-auto flex max-w-4xl flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
+          <motion.form
+            animate={{ opacity: 1 }}
+            className="mx-auto flex max-w-4xl flex-col gap-6"
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              <div className="space-y-1">
+              <motion.div
+                className="space-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
                 <Label htmlFor="name">
                   Full Name<span className="text-red-500">*</span>
                 </Label>
                 <Input id="name" placeholder="Full Name" type="text" {...register('name')} />
                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
-              </div>
-              <div className="space-y-1">
+              </motion.div>
+
+              <motion.div
+                className="space-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
                 <Label htmlFor="email">
                   Email Address<span className="text-red-500">*</span>
                 </Label>
@@ -107,20 +129,31 @@ export const Contact = () => {
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                 )}
-              </div>
+              </motion.div>
             </div>
 
             <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              <div className="space-y-1">
-                <Label htmlFor="email">
+              <motion.div
+                className="space-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
+                <Label htmlFor="phone">
                   Phone Number<span className="text-red-500">*</span>
                 </Label>
                 <Input placeholder="Phone Number" type="tel" {...register('phone')} />
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
                 )}
-              </div>
-              <div className="space-y-1">
+              </motion.div>
+
+              <motion.div
+                className="space-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
                 <Label htmlFor="company">
                   Company Name<span className="text-red-500">*</span>
                 </Label>
@@ -133,29 +166,47 @@ export const Contact = () => {
                 {errors.company && (
                   <p className="mt-1 text-sm text-red-600">{errors.company.message}</p>
                 )}
-              </div>
+              </motion.div>
             </div>
 
             <div className="grid w-full">
-              <div className="space-y-1">
+              <motion.div
+                className="space-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
                 <Label htmlFor="message">
                   Message<span className="text-red-500">*</span>
                 </Label>
                 <Textarea id="message" placeholder="Your Message" {...register('message')} />
-              </div>
+              </motion.div>
               {errors.message && (
                 <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
               )}
             </div>
 
-            <Button disabled={loading} size={'lg'} type="submit">
-              {loading ? 'Sending...' : 'Send Message'}
-            </Button>
-          </form>
+            <motion.div
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Button disabled={loading} size={'lg'} type="submit">
+                {loading ? 'Sending...' : 'Send Message'}
+              </Button>
+            </motion.div>
+          </motion.form>
         </div>
         {/* Image Section */}
         <div className="hidden w-1/2 lg:block">
-          <img alt="Contact Illustration" className="w-full rounded-lg" src={ContactImage} />
+          <motion.img
+            alt="Contact Illustration"
+            className="w-full rounded-lg"
+            initial={{ opacity: 0 }}
+            src={ContactImage}
+            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1 }}
+          />
         </div>
       </div>
     </SectionWrapper>

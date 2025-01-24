@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Cpu, Monitor, MoveDown, Rocket, Target } from 'lucide-react';
 
 import {
@@ -40,7 +41,12 @@ const steps = [
 export const HowItWorks = () => {
   return (
     <SectionWrapper id="how-it-works">
-      <div className="space-y-4">
+      <motion.div
+        className="space-y-4"
+        initial={{ opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
         <SectionSubtitle>How It Works</SectionSubtitle>
         <SectionTitle>
           Our <GradientText>4-Step Process </GradientText>
@@ -51,12 +57,24 @@ export const HowItWorks = () => {
           We follow a proven approach to AI success, guiding you through every step to ensure
           seamless implementation and continuous improvement.
         </SectionDescription>
-      </div>
+      </motion.div>
 
       {/* Stepwise Process */}
-      <div className="relative mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
+      <motion.div
+        animate={{ opacity: 1 }}
+        className="relative mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1 }}
+      >
         {steps.map(({ title, description, icon }, index) => (
-          <div key={title} className="relative flex flex-col items-center">
+          <motion.div
+            key={title}
+            className="relative flex flex-col items-center"
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
             <Card className="relative flex w-full flex-col border bg-muted/50 p-6 shadow-sm">
               <span className="absolute -top-5 left-1/2 z-10 flex size-12 items-center justify-center rounded-full bg-brand text-lg font-semibold text-white max-sm:-translate-x-1/2 sm:-left-3 sm:-top-3 sm:size-8">
                 {index + 1}
@@ -80,17 +98,24 @@ export const HowItWorks = () => {
                 size={16}
               />
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* CTA Button */}
       <div className="mt-12 text-center">
-        <a href="/#contact">
-          <Button className="flex w-72 items-center justify-center gap-2 rounded-full">
-            Schedule Your Free Process Audit
-          </Button>
-        </a>
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1 }}
+        >
+          <a href="/#contact">
+            <Button className="flex w-72 items-center justify-center gap-2 rounded-full">
+              Schedule Your Free Process Audit
+            </Button>
+          </a>
+        </motion.div>
       </div>
     </SectionWrapper>
   );

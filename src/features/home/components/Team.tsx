@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 
+import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 import AnishSthapitImg from '@/assets/team/anish-sthapit.jpg';
@@ -147,7 +148,11 @@ export const Team = () => {
 
   return (
     <SectionWrapper className="space-y-16" id="team">
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
         <SectionSubtitle>Meet the Team</SectionSubtitle>
         <SectionTitle>
           Our <GradientText>Dedicated Crew</GradientText>
@@ -156,52 +161,68 @@ export const Team = () => {
         <SectionDescription>
           Meet the talented individuals who are passionate about driving our vision forward.
         </SectionDescription>
-      </div>
+      </motion.div>
 
       <div className="grid gap-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {teamList.map(({ imageUrl, name, position, description, socialNetworks }: TeamProps) => (
-          <Card
-            key={name}
-            className="relative mt-8 flex flex-col items-center justify-center bg-muted/50"
-          >
-            <CardHeader className="mt-8 flex items-center justify-center pb-2">
-              <img
-                alt={`${name} ${position}`}
-                className="absolute -top-12 aspect-square h-24 w-24 rounded-full border object-cover"
-                src={imageUrl}
-              />
-              <CardTitle className="text-center">{name}</CardTitle>
-              <CardDescription className="text-base text-brand dark:text-brand-100">
-                {position}
-              </CardDescription>
-            </CardHeader>
+        {teamList.map(
+          ({ imageUrl, name, position, description, socialNetworks }: TeamProps, index) => (
+            <motion.div
+              key={name}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <Card
+                key={name}
+                className="relative mt-8 flex flex-col items-center justify-center bg-muted/50"
+              >
+                <CardHeader className="mt-8 flex items-center justify-center pb-2">
+                  <img
+                    alt={`${name} ${position}`}
+                    className="absolute -top-12 aspect-square h-24 w-24 rounded-full border object-cover"
+                    src={imageUrl}
+                  />
+                  <CardTitle className="text-center">{name}</CardTitle>
+                  <CardDescription className="text-base text-brand dark:text-brand-100">
+                    {position}
+                  </CardDescription>
+                </CardHeader>
 
-            <CardContent className="pb-2 text-center text-sm">
-              <p>{description}</p>
-            </CardContent>
+                <CardContent className="pb-2 text-center text-sm">
+                  <p>{description}</p>
+                </CardContent>
 
-            <CardFooter className="flex justify-center space-x-4">
-              {socialNetworks.map(({ name, url }: SocialNetworksProps) => (
-                <div key={name}>
-                  <Link
-                    rel="noreferrer noopener"
-                    target="_blank"
-                    to={url}
-                    className={cn(
-                      'rounded-full hover:bg-brand',
-                      buttonVariants({
-                        variant: 'ghost',
-                      })
-                    )}
+                <CardFooter className="flex justify-center space-x-4">
+                  <motion.div
+                    className="flex justify-center space-x-4"
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    whileInView={{ opacity: 1 }}
                   >
-                    <span className="sr-only">{name} icon</span>
-                    {socialIcon(name)}
-                  </Link>
-                </div>
-              ))}
-            </CardFooter>
-          </Card>
-        ))}
+                    {socialNetworks.map(({ name, url }: SocialNetworksProps) => (
+                      <div key={name}>
+                        <Link
+                          rel="noreferrer noopener"
+                          target="_blank"
+                          to={url}
+                          className={cn(
+                            'rounded-full hover:bg-brand',
+                            buttonVariants({
+                              variant: 'ghost',
+                            })
+                          )}
+                        >
+                          <span className="sr-only">{name} icon</span>
+                          {socialIcon(name)}
+                        </Link>
+                      </div>
+                    ))}
+                  </motion.div>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          )
+        )}
       </div>
     </SectionWrapper>
   );

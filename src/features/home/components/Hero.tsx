@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 
 import Autoplay from 'embla-carousel-autoplay';
+import { motion } from 'framer-motion';
 
 import DataDrivenImg from '@/assets/hero/data-processing.svg';
 import GenAiImg from '@/assets/hero/firmware.svg';
@@ -51,25 +52,34 @@ interface IHeroHeadlineProps {
 }
 
 const HeroHeadline = ({ headline }: IHeroHeadlineProps) => (
-  <div className="text-4xl font-bold sm:text-5xl lg:max-w-xl lg:text-5xl xl:max-w-3xl xl:text-6xl">
-    <div className="flex w-full items-center justify-center lg:justify-start">
-      <HoverBorderGradient
-        className="w-fit cursor-auto rounded-full px-3 py-0.5 text-xs text-brand-50/90 dark:text-primary"
-        containerClassName="mb-2"
-      >
-        Empower your business ⚡
-      </HoverBorderGradient>
-    </div>
+  <motion.div
+    animate={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 30 }}
+    transition={{ duration: 0.8 }}
+  >
+    <div className="text-4xl font-bold sm:text-5xl lg:max-w-xl lg:text-5xl xl:max-w-3xl xl:text-6xl">
+      <div className="flex w-full items-center justify-center lg:justify-start">
+        <HoverBorderGradient
+          className="w-fit cursor-auto rounded-full px-3 py-0.5 text-xs text-brand-50/90 dark:text-primary"
+          containerClassName="mb-2"
+        >
+          Empower your business ⚡
+        </HoverBorderGradient>
+      </div>
 
-    <h1>
-      {headline.split(' ').map((word, index, arr) => (
-        <span key={index} className={`inline-block ${index >= arr.length - 2 ? 'text-brand' : ''}`}>
-          {word}
-          {index !== arr.length - 1 && <span className="ml-3" />}
-        </span>
-      ))}
-    </h1>
-  </div>
+      <h1>
+        {headline.split(' ').map((word, index, arr) => (
+          <span
+            key={index}
+            className={`inline-block ${index >= arr.length - 2 ? 'text-brand' : ''}`}
+          >
+            {word}
+            {index !== arr.length - 1 && <span className="ml-3" />}
+          </span>
+        ))}
+      </h1>
+    </div>
+  </motion.div>
 );
 
 interface IHeroDescriptionProps {
@@ -77,13 +87,23 @@ interface IHeroDescriptionProps {
 }
 
 const HeroDescription = ({ description }: IHeroDescriptionProps) => (
-  <p className="mx-auto max-w-2xl text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0">
+  <motion.p
+    animate={{ opacity: 1, y: 0 }}
+    className="mx-auto max-w-2xl text-muted-foreground sm:text-lg md:w-10/12 lg:mx-0"
+    initial={{ opacity: 0, y: 20 }}
+    transition={{ duration: 0.6, delay: 0.3 }}
+  >
     {description}
-  </p>
+  </motion.p>
 );
 
 const HeroActions = ({ buttonLink, buttonText }: { buttonLink: string; buttonText: string }) => (
-  <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-normal">
+  <motion.div
+    animate={{ opacity: 1, y: 0 }}
+    className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-normal"
+    initial={{ opacity: 0, y: 20 }}
+    transition={{ duration: 0.6, delay: 0.5 }}
+  >
     <a className="max-sm:w-full" href={'/#contact'}>
       <Button className="w-full">Get a Free Consultation</Button>
     </a>
@@ -93,7 +113,7 @@ const HeroActions = ({ buttonLink, buttonText }: { buttonLink: string; buttonTex
         {buttonText}
       </Button>
     </Link>
-  </div>
+  </motion.div>
 );
 
 export const Hero = () => {
@@ -125,13 +145,18 @@ export const Hero = () => {
                   </div>
 
                   {/* Image section */}
-                  <div className="relative flex w-full items-center justify-center lg:w-1/2">
+                  <motion.div
+                    animate={{ opacity: 1, x: 0 }}
+                    className="relative flex w-full items-center justify-center lg:w-1/2"
+                    initial={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                  >
                     <img
                       alt="Hero Image"
                       className="hidden size-[28rem] object-contain lg:block"
                       src={carousel.img}
                     />
-                  </div>
+                  </motion.div>
 
                   {/* Mobile Image Background */}
                   <div className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-5 lg:hidden">

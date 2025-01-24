@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import {
   GradientText,
   SectionDescription,
@@ -54,7 +56,11 @@ const FAQList: Array<FAQProps> = [
 export const FAQ = () => {
   return (
     <SectionWrapper className="space-y-10" id="faq">
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
         <SectionSubtitle>Get to Know Us Better</SectionSubtitle>
         <SectionTitle>
           Frequently Asked <GradientText>Questions</GradientText>
@@ -63,14 +69,26 @@ export const FAQ = () => {
           Learn how our Agentic AI solutions, AI-driven automation, and data intelligence can
           transform your business.
         </SectionDescription>
-      </div>
+      </motion.div>
 
       <Accordion collapsible className="AccordionRoot w-full" type="single">
-        {FAQList.map(({ question, answer, value }: FAQProps) => (
+        {FAQList.map(({ question, answer, value }: FAQProps, index) => (
           <AccordionItem key={value} value={value}>
-            <AccordionTrigger className="text-left">{question}</AccordionTrigger>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <AccordionTrigger className="text-left">{question}</AccordionTrigger>
+            </motion.div>
 
-            <AccordionContent>{answer}</AccordionContent>
+            <motion.div
+              animate={{ opacity: 1, height: 'auto' }}
+              initial={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <AccordionContent>{answer}</AccordionContent>
+            </motion.div>
           </AccordionItem>
         ))}
       </Accordion>
