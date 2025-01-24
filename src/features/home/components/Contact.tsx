@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-import ContactImage from '@/assets/contact-us/contact-us.svg';
+import ContactImage from '@/assets/contact-us/contact-us-2.svg';
 import {
   GradientText,
   SectionDescription,
@@ -47,6 +47,10 @@ export const Contact = () => {
   const onSubmit = async (data: ContactFormData) => {
     setLoading(true);
 
+    // const serviceID = import.meta.env.EMAILJS_SEVICE_ID;
+    // const templateID = import.meta.env.EMAILJS_TEMPLATE_ID;
+    // const publicKey = import.meta.env.EMAILJS_USER_ID;
+
     const serviceID = 'service_emlmnvm';
     const templateID = 'template_t2600cs';
     const publicKey = 'FX6NjO6LjvXvZSF_3';
@@ -74,7 +78,15 @@ export const Contact = () => {
               Contact Us <GradientText>Today</GradientText>
             </SectionTitle>
             <SectionDescription>
-              Fill out the form below and we’ll get back to you as soon as possible.
+              Fill out the form below and we’ll get back to you as soon as possible. Alternatively,
+              you can reach us directly at{' '}
+              <a
+                className="font-medium text-brand hover:underline dark:text-brand-100"
+                href="mailto:contact@factdigi.com"
+              >
+                contact@factdigi.com
+              </a>
+              .
             </SectionDescription>
           </div>
 

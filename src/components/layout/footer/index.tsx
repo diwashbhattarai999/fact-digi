@@ -6,7 +6,7 @@ const socialLinks = [{ href: '#', label: 'LinkedIn' }];
 
 const companyLinks = [
   { href: '#', label: 'About Us' },
-  { href: '#', label: 'Contact Us' },
+  { href: 'mailto:contact@factdigi.com', label: 'Contact Us' },
 ];
 
 const resourceLinks = [
@@ -33,8 +33,8 @@ export const Footer = () => {
 
       <section className="border-t border-border py-3">
         <h3 className="max-container text-center text-xs sm:text-sm">
-          &copy; 2024 Fact-Digi, a leader in Generative AI, BI, data solutions, and application
-          development.
+          &copy; 2024 Fact-Digi — Pioneering Agentic AI, Intelligent Automation, and Data-Driven
+          Solutions for Business Transformation.
         </h3>
       </section>
     </footer>

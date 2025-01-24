@@ -21,7 +21,7 @@ const carouselData = [
     id: 1,
     headline: 'Revolutionize Your Business with Generative AI',
     description:
-      'We diagnose your processes, uncover automation opportunities, and drive efficiency with the power of AI. Empower your business with cutting-edge AI, Business Intelligence, Data Solutions, and Web & Mobile Application Development solutions.',
+      'Unlock efficiency with AI Agents—automating workflows, optimizing decisions, and enhancing customer experiences through intelligent automation and real-time insights.',
     img: GenAiImg,
     buttonLink: '/blog/gen-ai',
     buttonText: 'Learn How GenAI Can Transform Your Business',

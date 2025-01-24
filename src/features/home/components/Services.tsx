@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart, Database, Workflow } from 'lucide-react';
+import { ArrowRight, BarChart, Bot, Database, Workflow } from 'lucide-react';
 
 import {
   GradientText,
@@ -34,6 +34,12 @@ const serviceList: Array<ServiceProps> = [
       'Leverage AI and BI technologies to enhance your business intelligence, improve analytics, and drive smarter decisions.',
     icon: <BarChart className="size-6 text-brand" />,
   },
+  {
+    title: 'Agentic AI Development',
+    description:
+      'Build AI-driven autonomous agents that intelligently adapt, automate decision-making, and optimize workflows in real-time.',
+    icon: <Bot className="size-6 text-brand" />,
+  },
 ];
 
 export const Services = () => {
@@ -55,7 +61,7 @@ export const Services = () => {
         </div>
 
         {/* Service List */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
           {serviceList.map(({ icon, title, description }: ServiceProps) => (
             <div key={title}>
               <div className="flex flex-col items-start justify-start gap-4 space-y-1">

@@ -20,33 +20,33 @@ interface FAQProps {
 
 const FAQList: Array<FAQProps> = [
   {
-    question: 'What services does Fact-Digi offer?',
+    question: 'What is Fact-Digi’s expertise?',
     answer:
-      'Fact-Digi provides business intelligence (BI), AI solutions, data analytics, and mobile & web application development to help companies leverage technology for growth.',
+      'Fact-Digi specializes in Agentic AI solutions, business intelligence (BI), AI-driven automation, and data analytics to help businesses optimize workflows and make data-driven decisions.',
     value: 'item-1',
   },
   {
-    question: "How can Fact-Digi's AI solutions help my business?",
+    question: 'What are Agentic AI solutions?',
     answer:
-      'Our AI solutions use advanced machine learning models to improve decision-making, automate processes, and uncover insights from your data. We tailor solutions to specific business needs to optimize operations.',
+      'Agentic AI solutions involve AI-driven autonomous agents capable of reasoning, adapting, and making decisions without constant human intervention. These agents optimize business operations, automate tasks, and drive efficiency.',
     value: 'item-2',
   },
   {
-    question: 'Do you offer customized web and mobile app development?',
+    question: 'How can AI-driven automation help my business?',
     answer:
-      'Yes, we provide end-to-end development for web and mobile applications, including design, development, testing, and deployment. We focus on building scalable, user-friendly apps that align with your business goals.',
+      'AI-driven automation streamlines repetitive tasks, enhances decision-making with real-time insights, and reduces operational costs. Our solutions integrate AI agents to optimize business processes and boost productivity.',
     value: 'item-3',
   },
   {
-    question: 'What is business intelligence (BI) and how does it benefit my company?',
+    question: 'What industries benefit from AI-driven solutions?',
     answer:
-      'Business Intelligence (BI) refers to the tools and strategies used to analyze and interpret business data. With BI, Fact-Digi helps businesses gain insights, make data-driven decisions, and identify growth opportunities.',
+      'Our AI-powered solutions benefit industries such as finance, healthcare, logistics, e-commerce, and manufacturing by automating workflows, improving predictive analytics, and enhancing customer experiences.',
     value: 'item-4',
   },
   {
-    question: 'Can Fact-Digi help me with data analytics?',
+    question: 'How does Fact-Digi approach AI implementation?',
     answer:
-      'Absolutely! We provide comprehensive data analytics services to help businesses gather insights from their data, optimize operations, and improve overall performance. Our team uses cutting-edge techniques to extract actionable insights.',
+      'We start by analyzing your business needs, identifying automation opportunities, and designing AI agents tailored to your workflows. Our solutions seamlessly integrate into your existing systems to maximize efficiency.',
     value: 'item-5',
   },
 ];
@@ -60,8 +60,8 @@ export const FAQ = () => {
           Frequently Asked <GradientText>Questions</GradientText>
         </SectionTitle>
         <SectionDescription>
-          Have questions about our services, AI solutions, or development process? Check out our FAQ
-          section to learn more.
+          Learn how our Agentic AI solutions, AI-driven automation, and data intelligence can
+          transform your business.
         </SectionDescription>
       </div>
 

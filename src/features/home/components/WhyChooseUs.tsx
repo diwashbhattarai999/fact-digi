@@ -8,7 +8,14 @@ import {
   SectionWrapper,
 } from '@/components/PageItems';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 interface BenifitsProps {
   icon: JSX.Element;
@@ -78,15 +85,15 @@ export const WhyChooseUs = () => {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {BENIFITS.map(({ icon, title, description }: BenifitsProps) => (
           <Card key={title} className="flex flex-col border bg-muted/50 text-center">
-            <CardHeader>
-              <CardTitle className="text-gradient flex h-24 flex-col items-center gap-4 text-xl">
+            <CardHeader className="pb-0 sm:pb-0">
+              <CardTitle className="text-gradient flex flex-col items-center gap-4 text-xl">
                 {icon}
                 {title}
               </CardTitle>
             </CardHeader>
 
             <CardContent>
-              <p className="line-clamp-4 text-muted-foreground">{description}</p>
+              <CardDescription>{description}</CardDescription>
             </CardContent>
 
             <CardFooter className="hidden" />

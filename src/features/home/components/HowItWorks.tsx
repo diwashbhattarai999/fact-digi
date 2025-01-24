@@ -1,6 +1,12 @@
 import { Cpu, Monitor, MoveDown, Rocket, Target } from 'lucide-react';
 
-import { SectionSubtitle } from '@/components/PageItems';
+import {
+  GradientText,
+  SectionDescription,
+  SectionSubtitle,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -33,18 +39,18 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="max-container py-24 sm:py-32" id="how-it-works">
+    <SectionWrapper id="how-it-works">
       <div className="space-y-4">
         <SectionSubtitle>How It Works</SectionSubtitle>
-        <h2 className="text-3xl font-bold md:text-4xl">
-          Our <span className="text-gradient">4-Step Process </span>
+        <SectionTitle>
+          Our <GradientText>4-Step Process </GradientText>
           to AI Success
-        </h2>
+        </SectionTitle>
 
-        <p className="text-muted-foreground md:w-3/4">
+        <SectionDescription>
           We follow a proven approach to AI success, guiding you through every step to ensure
           seamless implementation and continuous improvement.
-        </p>
+        </SectionDescription>
       </div>
 
       {/* Stepwise Process */}
@@ -86,6 +92,6 @@ export const HowItWorks = () => {
           </Button>
         </a>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };

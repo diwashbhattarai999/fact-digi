@@ -82,5 +82,5 @@ export const SectionDescription = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <p className={cn('mt-4 max-w-2xl text-muted-foreground', className)}>{children}</p>;
+  return <p className={cn('mt-4 max-w-4xl text-muted-foreground', className)}>{children}</p>;
 };
