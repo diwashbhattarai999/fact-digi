@@ -44,7 +44,7 @@ const serviceList: Array<ServiceProps> = [
 
 export const Services = () => {
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper className="pt-0" id="services">
       <div className="relative flex w-full flex-col space-y-10 overflow-hidden rounded-2xl border bg-background p-8 shadow-xl md:p-12">
         <div>
           <div className="pattern-dots absolute left-0 top-0 size-full pattern-blue-500 pattern-bg-background pattern-opacity-5 pattern-size-6" />
