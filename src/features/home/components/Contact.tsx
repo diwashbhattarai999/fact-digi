@@ -24,7 +24,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters long.'),
   email: z.string().email('Invalid email address.'),
-  phone: z.string().regex(/^\d{10}$/, 'Phone number must be 10 digits.'),
+  phone: z.string().min(1, 'Phone number is required.'),
   company: z.string().min(2, 'Company name must be at least 2 characters long.'),
   message: z.string().min(10, 'Message must be at least 10 characters long.'),
 });

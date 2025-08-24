@@ -31,7 +31,7 @@ const BlogPostPage: React.FC = () => {
       </div>
 
       {/* Blog Content */}
-      <article className="prose prose-gray max-w-none md:prose-lg">
+      <article className="prose prose-gray max-w-none text-justify md:prose-lg">
         <ReactMarkdown>{blogPost.content}</ReactMarkdown>
       </article>
     </div>

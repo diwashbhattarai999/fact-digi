@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://github.com/diwashbhattarai999/fact-digi.git"
   },
+  "homepage": ".",
   "license": "MIT",
   "keywords": [
     "react",
@@ -58,6 +59,7 @@
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "framer-motion": "^11.15.0",
+    "libphonenumber-js": "^1.11.18",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
