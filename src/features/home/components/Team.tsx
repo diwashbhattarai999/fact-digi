@@ -10,6 +10,7 @@ import AyushPandeyImg from '@/assets/team/ayush-pandey.jpg';
 import DiwashBhattaraiImg from '@/assets/team/diwash-bhattarai.jpg';
 import LaxmiBhandariImg from '@/assets/team/laxmi-bhandari.jpg';
 import SajalJoshiImg from '@/assets/team/sajal-joshi.jpg';
+import UnknownImg from '@/assets/team/unknown.jpeg';
 import {
   GradientText,
   SectionDescription,
@@ -97,12 +98,24 @@ const teamList: Array<TeamProps> = [
     imageUrl: AnujLohalaImg,
     name: 'Anuj Lohala',
     position: 'BI Lead',
-    description:
-      'Anuj specializes in Power BI, DAX, and dashboard creation for data-driven decision-making.',
+    description: 'Anuj specializes in Power BI, DAX, and dashboard creation for decision-making.',
     socialNetworks: [
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/anuj-lohala-1514311a0/',
+      },
+    ],
+  },
+  {
+    imageUrl: UnknownImg,
+    name: 'Shyamul Shakya',
+    position: 'Senior data analyst',
+    description:
+      'Shyamul Shakya specializes in data analysis and visualization, helping organizations decide.',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/shyamulshakya/',
       },
     ],
   },
@@ -174,7 +187,7 @@ export const Team = () => {
             >
               <Card
                 key={name}
-                className="relative mt-8 flex flex-col items-center justify-center bg-muted/50"
+                className="relative mt-8 flex min-h-[340px] flex-col items-center justify-center bg-muted/50"
               >
                 <CardHeader className="mt-8 flex items-center justify-center pb-2">
                   <img

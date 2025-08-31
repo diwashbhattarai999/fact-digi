@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
@@ -22,32 +22,46 @@ interface RouteProps {
 }
 
 const routeList: Array<RouteProps> = [
-  {
-    href: '/#benefits',
-    label: 'Benefits',
-  },
-  {
-    href: '/#how-it-works',
-    label: 'How It Works',
-  },
-  {
-    href: '/#team',
-    label: 'Team',
-  },
-  {
-    href: '/#faq',
-    label: 'FAQ',
-  },
-  {
-    href: '/blog',
-    label: 'Blogs',
-  },
+  { href: '/#benefits', label: 'Benefits' },
+  { href: '/#how-it-works', label: 'How It Works' },
+  { href: '/#team', label: 'Team' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blogs' },
 ];
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  /** Smooth scroll helper */
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  /** Handles clicks for section links */
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+
+      if (location.pathname !== '/') {
+        // go to home first
+        navigate('/');
+        // delay to wait for DOM render
+        setTimeout(() => {
+          scrollToId(targetId);
+        }, 100);
+      } else {
+        scrollToId(targetId);
+      }
+      setIsOpen(false);
+    }
+  };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -55,23 +69,13 @@ export const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > 150) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      if (currentScrollY > 100) {
-        setScrollDirection(currentScrollY > lastScrollY ? 'down' : 'up');
-      } else {
-        setScrollDirection('up');
-      }
+      setIsScrolled(currentScrollY > 150);
+      setScrollDirection(currentScrollY > lastScrollY ? 'down' : 'up');
 
       lastScrollY = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -80,7 +84,6 @@ export const Navbar = () => {
   return (
     <motion.header
       animate={{ y: scrollDirection === 'up' ? 0 : 0 }}
-      // animate={{ y: scrollDirection === "up" ? 0 : -100 }}
       initial={{ y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
@@ -97,7 +100,6 @@ export const Navbar = () => {
           {/* mobile */}
           <div className="flex md:hidden">
             <ModeToggle />
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
@@ -114,23 +116,15 @@ export const Navbar = () => {
                 <SheetHeader className="items-start">
                   <Logo imgClassName="size-14" />
                 </SheetHeader>
+
                 <nav className="mt-4 flex flex-col items-start gap-2">
-                  {routeList.map(({ href, label }: RouteProps) => (
+                  {routeList.map(({ href, label }) => (
                     <Link
                       key={label}
                       className={buttonVariants({ variant: 'ghost' })}
                       to={href}
                       onClick={(e) => {
-                        if (href.startsWith('/#')) {
-                          e.preventDefault(); // Prevent default navigation
-                          const targetId = href.replace('/#', ''); // Extract the section ID
-                          const targetElement = document.getElementById(targetId);
-
-                          if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }
-                        setIsOpen(false);
+                        handleNavClick(e, href);
                       }}
                     >
                       {label}
@@ -143,27 +137,16 @@ export const Navbar = () => {
 
           {/* desktop */}
           <nav className="hidden gap-2 md:flex">
-            {routeList.map((route: RouteProps, i) => (
+            {routeList.map(({ href, label }) => (
               <Link
-                key={i}
-                // rel="noreferrer noopener"
-                to={route.href}
-                className={`text-[17px] ${buttonVariants({
-                  variant: 'ghost',
-                })}`}
+                key={label}
+                className={`text-[17px] ${buttonVariants({ variant: 'ghost' })}`}
+                to={href}
                 onClick={(e) => {
-                  if (route.href.startsWith('/#')) {
-                    e.preventDefault(); // Prevent default navigation
-                    const targetId = route.href.replace('/#', ''); // Extract the section ID
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                      targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }
+                  handleNavClick(e, href);
                 }}
               >
-                {route.label}
+                {label}
               </Link>
             ))}
           </nav>

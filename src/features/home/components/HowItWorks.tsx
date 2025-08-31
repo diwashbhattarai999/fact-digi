@@ -75,7 +75,7 @@ export const HowItWorks = () => {
             transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <Card className="relative flex w-full flex-col border bg-muted/50 p-6 shadow-sm">
+            <Card className="relative flex min-h-[340px] w-full flex-col border bg-muted/50 p-6 shadow-sm">
               <span className="absolute -top-5 left-1/2 z-10 flex size-12 items-center justify-center rounded-full bg-brand text-lg font-semibold text-white max-sm:-translate-x-1/2 sm:-left-3 sm:-top-3 sm:size-8">
                 {index + 1}
               </span>

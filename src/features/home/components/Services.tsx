@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart, Bot, Database, Workflow } from 'lucide-react';
+import { BarChart, Bot, Database, Workflow } from 'lucide-react';
 
 import {
   GradientText,
@@ -8,7 +8,7 @@ import {
   SectionTitle,
   SectionWrapper,
 } from '@/components/PageItems';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 
 interface ServiceProps {
   title: string;
@@ -100,7 +100,7 @@ export const Services = () => {
         </motion.div>
 
         {/* CTA Button */}
-        <motion.div
+        {/* <motion.div
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -112,7 +112,7 @@ export const Services = () => {
               <ArrowRight className="size-4" />
             </a>
           </Button>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </SectionWrapper>
   );
