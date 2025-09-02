@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { blogPosts } from '@/data/blog-posts';
 
-const BlogList = () => {
+export default function BlogsPage() {
   return (
     <div className="mt-10">
       <h1 className="mb-6 text-3xl font-bold">Latest Blog Posts</h1>
@@ -49,6 +49,4 @@ const BlogList = () => {
       </div>
     </div>
   );
-};
-
-export default BlogList;
+}

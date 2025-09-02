@@ -10,7 +10,7 @@ import {
   WhyChooseUs,
 } from '@/features/home/components';
 
-const Home = () => {
+export default function HomePage() {
   return (
     <>
       <div className="bg-gradient-to-b from-brand/10 to-background">
@@ -46,6 +46,4 @@ const Home = () => {
       <ScrollToTop />
     </>
   );
-};
-
-export default Home;
+}
