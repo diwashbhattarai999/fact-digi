@@ -12,22 +12,12 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
+import { BASE_PATH, NAV_ROUTES, ROUTES } from '@/constants/routes';
 import { cn } from '@/lib/utils';
 
 import Logo from '../Logo';
 
-interface RouteProps {
-  href: string;
-  label: string;
-}
-
-const routeList: Array<RouteProps> = [
-  { href: '/#benefits', label: 'Benefits' },
-  { href: '/#how-it-works', label: 'How It Works' },
-  { href: '/#team', label: 'Team' },
-  { href: '/#faq', label: 'FAQ' },
-  { href: '/blog', label: 'Blogs' },
-];
+const routeList = NAV_ROUTES;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,13 +35,14 @@ export const Navbar = () => {
 
   /** Handles clicks for section links */
   const handleNavClick = (e: React.MouseEvent, href: string) => {
-    if (href.startsWith('/#')) {
+    // Check if the href contains a hash for section navigation
+    if (href.includes('#')) {
       e.preventDefault();
-      const targetId = href.replace('/#', '');
+      const targetId = href.split('#')[1];
 
-      if (location.pathname !== '/') {
+      if (location.pathname !== ROUTES.HOME && location.pathname !== BASE_PATH) {
         // go to home first
-        navigate('/');
+        navigate(ROUTES.HOME);
         // delay to wait for DOM render
         setTimeout(() => {
           scrollToId(targetId);

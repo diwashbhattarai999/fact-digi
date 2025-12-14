@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { getBlogPostLink } from '@/constants/routes';
 import { blogPosts } from '@/data/blog-posts';
 
 export default function BlogsPage() {
@@ -22,7 +23,7 @@ export default function BlogsPage() {
           <Link
             key={slug}
             className="block transform rounded-lg transition duration-300 hover:scale-[1.02] hover:shadow-lg"
-            to={`/blog/${slug}`}
+            to={getBlogPostLink(slug)}
           >
             <Card>
               <CardHeader>

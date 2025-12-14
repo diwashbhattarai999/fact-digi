@@ -1,18 +1,16 @@
 import Logo from '@/components/Logo';
+import { ROUTES } from '@/constants/routes';
 
 import FooterSection from './FooterSection';
 
 const socialLinks = [{ href: 'https://www.linkedin.com/company/fact-digi', label: 'LinkedIn' }];
 
 const companyLinks = [
-  { href: '/about-us', label: 'About Us' },
+  { href: ROUTES.ABOUT, label: 'About Us' },
   { href: 'mailto:contact@factdigi.com', label: 'Contact Us' },
 ];
 
-const resourceLinks = [
-  { href: '/blog', label: 'Blog' },
-  // { href: '#', label: 'Case Studies' },
-];
+const resourceLinks = [{ href: ROUTES.BLOG, label: 'Blog' }];
 
 export const Footer = () => {
   return (

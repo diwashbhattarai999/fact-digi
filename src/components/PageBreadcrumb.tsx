@@ -18,6 +18,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { ROUTES } from '@/constants/routes';
 
 export function PageBreadCrumb() {
   const location = useLocation();
@@ -31,7 +32,7 @@ export function PageBreadCrumb() {
           <BreadcrumbLink asChild>
             <Link
               className="flex items-center gap-2 rounded-full bg-brand/90 px-3 py-1 text-gray-100 hover:bg-brand hover:text-white"
-              to="/"
+              to={ROUTES.HOME}
             >
               <Home size={16} />
               Home

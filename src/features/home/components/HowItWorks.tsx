@@ -10,6 +10,7 @@ import {
 } from '@/components/PageItems';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { getSectionLink, SECTIONS } from '@/constants/routes';
 
 const steps = [
   {
@@ -110,7 +111,7 @@ export const HowItWorks = () => {
           viewport={{ once: true }}
           whileInView={{ opacity: 1 }}
         >
-          <a href="/#contact">
+          <a href={getSectionLink(SECTIONS.CONTACT)}>
             <Button className="flex w-72 items-center justify-center gap-2 rounded-full">
               Schedule Your Free Process Audit
             </Button>

@@ -13,6 +13,7 @@ import {
   CarouselItem,
   CarouselPagination,
 } from '@/components/ui/carousel';
+import { getBlogPostLink, getSectionLink, SECTIONS } from '@/constants/routes';
 
 import { BackgroundBeamsWithCollision } from './BackgroundBeams';
 import { HoverBorderGradient } from './HoverBorderGradient';
@@ -24,7 +25,7 @@ const carouselData = [
     description:
       'Unlock efficiency with AI Agents—automating workflows, optimizing decisions, and enhancing customer experiences through intelligent automation and real-time insights.',
     img: GenAiImg,
-    buttonLink: '/blog/gen-ai',
+    buttonLink: getBlogPostLink('gen-ai'),
     buttonText: 'Learn How GenAI Can Transform Your Business',
   },
   {
@@ -33,7 +34,7 @@ const carouselData = [
     description:
       'We leverage the power of advanced BI solutions to unlock actionable insights and drive strategic growth. Streamline decision-making with tailored data analytics designed for your unique business needs.',
     img: DataDrivenImg,
-    buttonLink: '/blog/data-driven',
+    buttonLink: getBlogPostLink('data-driven'),
     buttonText: 'How Intelligent Data Solutions Can Transform Your Business',
   },
   {
@@ -42,7 +43,7 @@ const carouselData = [
     description:
       'Transform your workflows with cutting-edge automation solutions designed for growth. We help you achieve efficiency, precision, and success.',
     img: ProcessAutomationImg,
-    buttonLink: '/blog/process-automation',
+    buttonLink: getBlogPostLink('process-automation'),
     buttonText: 'Learn How Process Automation Optimizes Your Business',
   },
 ];
@@ -104,7 +105,7 @@ const HeroActions = ({ buttonLink, buttonText }: { buttonLink: string; buttonTex
     initial={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6, delay: 0.5 }}
   >
-    <a className="max-sm:w-full" href={'/#contact'}>
+    <a className="max-sm:w-full" href={getSectionLink(SECTIONS.CONTACT)}>
       <Button className="w-full">Get a Free Consultation</Button>
     </a>
 

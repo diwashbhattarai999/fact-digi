@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, Route } from 'react-router';
 
 import UnAuthLayout from '@/components/layout/UnAuthLayout';
+import { ROUTES } from '@/constants/routes';
 
 // Lazy load
 const HomePage = React.lazy(() => import('@/features/home'));
@@ -16,10 +17,10 @@ const BlogPostPage = React.lazy(() => import('@/features/blogs/pages/BlogPostPag
 const UnAuthRoutes = () => (
   <Route element={<UnAuthLayout />} path="">
     <Route element={<HomePage />} path="" />
-    <Route element={<Navigate to="/" />} path="/home" />
-    <Route element={<AboutPage />} path="/about-us" />
+    <Route element={<Navigate to={ROUTES.HOME} />} path={`${ROUTES.HOME}home`} />
+    <Route element={<AboutPage />} path={ROUTES.ABOUT} />
 
-    <Route element={<BlogLayout />} path="blog">
+    <Route element={<BlogLayout />} path={ROUTES.BLOG}>
       <Route element={<BlogsPage />} path="" />
       <Route element={<BlogPostPage />} path=":slug" />
     </Route>

@@ -37,7 +37,8 @@
     "prepare": "husky",
     "docker:build": "docker build -t fact-digi .",
     "docker:run": "docker run -p 3000:3000 fact-digi",
-    "docker:stop": "docker stop $(docker ps -a -q)"
+    "docker:stop": "docker stop $(docker ps -a -q)",
+    "ship": "./deploy.sh"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
