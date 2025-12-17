@@ -18,7 +18,7 @@ const Logo = ({ className, imgClassName, textClassName }: ILogoProps) => {
       <img
         alt="Fact Digi Logo"
         className={cn('size-16 sm:size-20', imgClassName)}
-        src="/factdigi/logo.png"
+        src="/logo.png"
       />
       <p className={cn('-ml-1', textClassName)}>Fact Digi</p>
     </Link>

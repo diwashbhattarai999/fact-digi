@@ -1,5 +1,5 @@
 // Base path for the application
-export const BASE_PATH = '/factdigi';
+export const BASE_PATH = '/';
 
 // Helper function to create routes with base path
 const createRoute = (path: string) => `${BASE_PATH}${path}`;
